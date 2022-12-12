@@ -1,22 +1,23 @@
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/Home.js';
+import FindUs from './components/FindUs.js';
+import Order from './components/Order.js';
+import MenuPage from './components/MenuPage.js';
+import NotFound from './components/NotFound.js';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Home></Home>}></Route>
+        <Route exact path = "/Find-Us" element = {<FindUs></FindUs>}></Route>
+        <Route exact path = "/Order" element = {<Order></Order>}></Route>
+        <Route exact path = "/Menu" element = {<MenuPage></MenuPage>}></Route> 
+        <Route path ="*" element = {<NotFound></NotFound>}></Route>
+      </Routes>
+    </Router>
   );
 }
 
-export default App;
+export default App
