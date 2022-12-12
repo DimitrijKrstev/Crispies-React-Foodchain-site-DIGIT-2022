@@ -4,10 +4,12 @@ import FindUs from './components/FindUs.js';
 import Order from './components/Order.js';
 import MenuPage from './components/MenuPage.js';
 import NotFound from './components/NotFound.js';
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <Router>
+        <Navbar></Navbar>
       <Routes>
         <Route exact path="/" element={<Home></Home>}></Route>
         <Route exact path = "/Find-Us" element = {<FindUs></FindUs>}></Route>

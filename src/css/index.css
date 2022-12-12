@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: "RegularFedoka";
+    src: local("FedokaOne-Regular"),
+    url("/src/fonts/FredokaOne-Regular.ttf") format("truetype");
+}
+
