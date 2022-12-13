@@ -1,0 +1,39 @@
+.FindUsCard {
+    padding: 20px;
+}
+.FindUsCard:not(.FindUsCard:last-of-type) {
+    border-right: 1px solid black;
+}
+.FindUsCard button {
+    padding: 1px 15px;
+    border: 1px solid black
+}
+.FindUs img {
+    margin: auto;
+    margin-top: 20px;
+    max-height: 500px;
+    max-width: 500px;
+}
+.FindUsCard img {
+    display: none;
+}
+.mapButtonVerticalShow, .mapButtonVerticalHide {
+    display: none;
+}
+@media (max-width: 850px) {
+    .FindUs img {
+        display: none;
+    }   
+    .FindUsCard {
+        width: 100vw;
+    } 
+    .FindUsCard img {
+        display: block;
+    }
+    .mapButtonHorizontal {
+        display: none;
+    }
+    .mapButtonVerticalShow, .mapButtonVerticalHide {
+        display: inline;
+    }
+}

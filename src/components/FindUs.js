@@ -1,29 +1,43 @@
-import {React, useState} from 'react'
+import {React, useEffect, useState} from 'react'
 import FindUsCard from './FindUsCard'
-import { collection, getDocs, getFirestore, doc } from '@firebase/firestore'
+import { db } from '../index'
+import { collection, getDocs, doc } from '@firebase/firestore'
+import "../css/FindUs.css"
 
-const getFromFS = async (setLocations) => {
-  let db = getFirestore();
-  const docRef = collection(db,"restaurants");
-  const docSnap = await getDocs(docRef);
-  
-  let processedData = [];
-  docSnap.forEach(entry => processedData.push({id:entry.id, ...entry.data()}));
-  setLocations(processedData);
-}
 
 const FindUs = () => {
   const [locations, setLocations] = useState([]);
+  const [mapOpened, setMapOpened] = useState('default');
   
-  getFromFS(setLocations);
+  useEffect(() => {
+      console.log("RENDERED");
+      let processedData = [];
+      const docRef = collection(db,"restaurants");
+      getDocs(docRef).then((data) => {
+      data.forEach(entry => processedData.push({id:entry.id, ...entry.data()}));
+      setLocations(processedData);
+    })
+  }, [])
   
   return (
     <div className='FindUs'>
-        <h1>Find Us</h1>
-        <p>Our locations:</p>
-        {locations.map(l => 
-          <FindUsCard key={l.id} name={l.name} address={l.address}/>
-          )}
+      <h1>Find Us</h1>
+      <p>Our locations:</p>
+      <div className='flex justify-evenly flex-wrap'>
+      {locations.map(l => 
+        <FindUsCard key={l.id} 
+          name={l.name} 
+          address={l.address}
+          imgUrl={l.imgUrl}
+          showOnMap = {(imgUrl) => {
+            setMapOpened(imgUrl) 
+          }}
+          />
+        )}
+      </div>
+      <div id="map">
+        <img src={mapOpened} />
+      </div>
     </div>
   )
 }
