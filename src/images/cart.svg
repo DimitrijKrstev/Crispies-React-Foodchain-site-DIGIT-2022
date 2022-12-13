@@ -11,6 +11,7 @@
     <clipPath id="_clip1">
         <path d="M0 0H600V600H0z"></path>
     </clipPath>
+
     <g fill="none" stroke="#171717" stroke-width="25" clipPath="url(#_clip1)">
         <path d="M587 13l-87 30-50 457H150"></path>
         <circle cx="450" cy="544.5" r="44.5"></circle>

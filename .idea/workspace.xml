@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9cb7027-5eae-4717-b7e7-a9eb5ed37fa4" name="Changes" comment="tailwind install">
-      <change afterPath="$PROJECT_DIR$/src/components/Navbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/css/Navbar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts/FredokaOne-Regular.ttf" afterDir="false" />
+    <list default="true" id="c9cb7027-5eae-4717-b7e7-a9eb5ed37fa4" name="Changes" comment="navbar find us stilizirano">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/accJSX.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/accJSX.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/cart.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/cart.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +56,9 @@
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/fonts" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/images" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -82,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670835410298</updated>
-      <workItem from="1670835412573" duration="9596000" />
+      <workItem from="1670835412573" duration="26127000" />
     </task>
     <task id="LOCAL-00001" summary="tailwind install">
       <created>1670852546630</created>
@@ -91,7 +92,35 @@
       <option name="project" value="LOCAL" />
       <updated>1670852546630</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Icon i pocnat navbar">
+      <created>1670859885301</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670859885301</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ikoni vo navbar malku podsredeno">
+      <created>1670935368277</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1670935368277</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ikoni vo navbar sredeni tip top sega">
+      <created>1670937992590</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1670937992590</updated>
+    </task>
+    <task id="LOCAL-00005" summary="navbar find us stilizirano">
+      <created>1670939552991</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1670939552991</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +139,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="tailwind install" />
-    <option name="LAST_COMMIT_MESSAGE" value="tailwind install" />
+    <MESSAGE value="Icon i pocnat navbar" />
+    <MESSAGE value="ikoni vo navbar malku podsredeno" />
+    <MESSAGE value="ikoni vo navbar sredeni tip top sega" />
+    <MESSAGE value="navbar find us stilizirano" />
+    <option name="LAST_COMMIT_MESSAGE" value="navbar find us stilizirano" />
   </component>
 </project>
