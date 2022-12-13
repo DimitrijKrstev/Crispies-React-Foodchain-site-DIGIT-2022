@@ -14,7 +14,7 @@ const Navbar = (props) => {
             <div style={{backgroundColor: "#fddaac"}} className="flex justify-center">
                 <Link to="/" className="text-8xl text-center mp-4" id="logoH1">CRISPIES</Link>
             </div>
-            <div className="buttonRow flex flex-row justify-between">
+            <div className="border-t-2 border-b-2 border-offblack flex flex-row justify-between">
                 <button>
                     <Link to="/Find-Us" className="bg-black hover:bg-black-400 text-white font-bold py-2 px-4 border-b-4
                      border-blue-700 hover:border-blue-500 text-center">Find Us</Link>
