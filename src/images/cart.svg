@@ -1,0 +1,20 @@
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        fillRule="evenodd"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="1.5"
+        clipRule="evenodd"
+        viewBox="0 0 600 600"
+>
+    <path fill="none" d="M0 0H600V600H0z"></path>
+    <clipPath id="_clip1">
+        <path d="M0 0H600V600H0z"></path>
+    </clipPath>
+    <g fill="none" stroke="#171717" stroke-width="25" clipPath="url(#_clip1)">
+        <path d="M587 13l-87 30-50 457H150"></path>
+        <circle cx="450" cy="544.5" r="44.5"></circle>
+        <circle cx="150" cy="544.5" r="44.5"></circle>
+        <path d="M458 420H13V100h476l-31 320zM13 340h453.267M13 256.5h462M13 180h468M120 100v320M223 100v320M326 100v320M429 100v320"></path>
+    </g>
+</svg>
