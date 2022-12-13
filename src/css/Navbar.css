@@ -2,6 +2,10 @@
     font-family: RegularFedoka;
     color: mediumseagreen;
     text-shadow: 0.15rem 0 0 #171717, 0 -1px 0 #171717, 0 1px 0 #171717, -1px 0 0 #171717;
+
+}
+#logoH1:hover{
+    color: #7DDEA9;
 }
 .buttonRow {
     border-bottom: solid #171717 0.15rem;
@@ -12,6 +16,52 @@
 .buttonBorder {
     border-left: solid #171717 0.15rem;
 
+}
+#scroll-container{
+    white-space: nowrap;
+    overflow: hidden;
+    overflow-wrap: normal;
+    text-overflow: clip;
+}
+#scroll-text {
+    white-space: nowrap;
+    overflow: hidden;
+    overflow-wrap: normal;
+    text-overflow: clip;
+    font-family: RegularFedoka;
+    /* animation properties */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+
+    -moz-animation: my-animation 20s linear infinite;
+    -webkit-animation: my-animation 20s linear infinite;
+    animation: my-animation 20s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+    from { -moz-transform: translateX(100%); }
+    to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+    from {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+    to {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
 }
 
 #userDiv{
