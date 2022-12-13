@@ -26,9 +26,9 @@ const Navbar = (props) => {
                     <button className="buttonBorder bg-sea hover:bg-sealight" onClick={() => changeClick(clicked === false)}>
                         <img src={accPic} className="float-right w-10 pt-1 mx-3 justify-end"></img>
                     </button>
-                    <div className="buttonBorder bg-sea hover:bg-sealight">
+                    <Link to='/Order' className="buttonBorder bg-sea hover:bg-sealight">
                         <img src={cartPic} className="float-right w-10 pt-1 mx-3 justify-end"></img>
-                    </div>
+                    </Link>
                 </div>
             </div>
             {clicked &&

@@ -1,8 +1,18 @@
 import React from 'react'
+import { useState, useEffect } from 'react';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
 
 const MenuPage = () => {
+  const [itemCards, setItems] = useState();
+  useEffect(() => {
+    
+  }, [])
   return (
-    <div>MenuPage</div>
+    <div className='flex justify-center'>
+      <div className='border-2 border-black'>
+
+      </div>
+    </div>
   )
 }
 

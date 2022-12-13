@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home></Home>}></Route>
         <Route exact path="/Find-Us" element={<FindUs></FindUs>}></Route>
-        <Route exact path="/Order" element={!authot ? <Order></Order> :
+        <Route exact path="/Order" element={authot ? <Order></Order> :
           <Navigate to="/"></Navigate>}></Route>
         <Route exact path="/Menu" element={<MenuPage></MenuPage>}></Route>
         <Route exact path="/Sign-Up" element={!authot ? <SignUp authot={authot} changeAuth={changeAuth}></SignUp> :
