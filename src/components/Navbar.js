@@ -18,11 +18,11 @@ const Navbar = (props) => {
                 <Link to="/Menu" className="bg-sea hover:bg-sealight text-white font-bold py-2 px-4 border-r-2
                 border-offblack text-center flex items-center text-offblack">Menu</Link>
                 <Link to="/Find-Us" className="bg-sea hover:bg-sealight text-white font-bold py-2 px-4 border-r-2
-                border-offblack text-center flex items-center text-offblack">Find Us</Link>
+                border-offblack text-center flex items-center text-offblack shrink-0">Find Us</Link>
                 <div className="flex-auto whitespace-nowrap" id="scroll-container">
-                    <div id="scroll-text" className="text-2xl mt-1">testtesttesttesttesttesttesttesttesttesttesttttttttt</div>
+                    <div id="scroll-text" className="text-2xl mt-1">Беше на отварањето? Кое отварање бе? Отварањето на мајка ти хахахаха! леле баки маалската ми ја пушти матер ке ти ебам... абе што ќе јадеме од криспис? па не знам некој врап на промоција бил слушам</div>
                 </div>
-                <div className="flex flex-row">
+                <div className="flex flex-row shrink-0">
                     <button className="buttonBorder bg-sea hover:bg-sealight" onClick={() => changeClick(clicked === false)}>
                         <img src={accPic} className="float-right w-10 pt-1 mx-3 justify-end"></img>
                     </button>
