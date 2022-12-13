@@ -1,10 +1,30 @@
-import React, { useContext } from 'react'
+import { onSnapshot } from 'firebase/firestore';
+import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../App';
+import OrderInfo from './OrderInfo';
+import {doc, setDoc} from '@firebase/firestore'
+import {db} from '../index'
 
 const Order = () => {
-
   const userState = useContext(UserContext);
-  // const userState = true;
+
+  const [fullName, setFullName] = useState("aaaaa");
+  const [deliveryAddress, setDeliveryAddress] = useState("");
+  const [cardNo, setCardNo] = useState("");
+  const [expiryDate, setExpiryDate] = useState("");
+  const [cvv, setCvv] = useState("");
+  const [billingAddress, setBillingAddress] = useState("");
+
+  useEffect(() => {
+    onSnapshot(doc(db,"users",userState.uid), doc => {
+      let data = doc.data();
+      setDeliveryAddress(data.deliveryAddress);
+      setCardNo(data.cardNo);
+      setExpiryDate(data.expiryDate);
+      setCvv(data.cvv);
+      setBillingAddress(data.billingAddress);
+    })
+  },[])
 
   return (
     <div className="Order">
@@ -13,15 +33,23 @@ const Order = () => {
           <h1>Ready to order?</h1>
           <p>Please confirm/complete your details below:</p>
           <table><tbody>
-            <tr><th>Name</th><td><input id="name">{}</input></td></tr>
-            <tr><th>Card no.</th><td><input id="name">{}</input></td></tr>
-            <tr><th>Expiry date</th><td><input id="name">{}</input></td></tr>
-            <tr><th>CVV</th><td><input id="name">{}</input></td></tr>
-            <tr><th>Billing address</th><td><input id="name"></input></td></tr>
-            <tr><th>Delivery address</th><td><input id="name"></input></td></tr>
-            <tr><th></th><td><input id="name"></input></td></tr>
+            <OrderInfo displayText="Full name" state={fullName} setState={setFullName}/>
+            <OrderInfo displayText="Delivery address" state={deliveryAddress} setState={setDeliveryAddress}/>
+            <OrderInfo displayText="Card no." state={cardNo} setState={setCardNo}/>
+            <OrderInfo displayText="Expiry date" state={expiryDate} setState={setExpiryDate}/>
+            <OrderInfo displayText="CVV" state={cvv} setState={setCvv}/>
+            <OrderInfo displayText="Billing address" state={billingAddress} setState={setBillingAddress}/>
           </tbody></table>
-          <button>Set</button>
+          <button onClick={() => {
+            setDoc(doc(db,"users",userState.uid), {
+              fullName: fullName,
+              deliveryAddress: deliveryAddress,
+              cardNo: cardNo,
+              expiryDate: expiryDate,
+              cvv: cvv,
+              billingAddress: billingAddress
+            })
+          }}>Set</button>
         </div>
       }
     </div>
