@@ -27,13 +27,18 @@ async function SignUpfunc(email, username, password) {
 
 const SignUp = () => {
     return (
-        <div className='flex flex-col w-1/3'>
-            <label>Email:</label><input type="text" id="emailInput"></input>
-            <label>Username:</label><input type="text" id="usernameInput"></input>
-            <label>Password:</label><input type="password" id="passwordInput"></input>
-            <button onClick={() => SignUpfunc(document.getElementById("emailInput").value, document.getElementById("usernameInput").value,
-                document.getElementById("passwordInput").value)}>Sign Up</button>
-            <p id="errorP" className='text-center text-red-600'></p>
+        <div className='flex justify-center'>
+            <div className='flex mt-20 border-2 border-black p-10'>
+                <img className='w-30 h-30' src="https://i.pinimg.com/originals/71/37/09/7137094cc3e2325bb4062ce47c01347c.png"></img>
+                <div className='flex flex-col'>
+                    <label>Email:</label><input type="text" id="emailInput"></input>
+                    <label>Username:</label><input type="text" id="usernameInput"></input>
+                    <label>Password:</label><input type="password" id="passwordInput"></input>
+                    <button onClick={() => SignUpfunc(document.getElementById("emailInput").value, document.getElementById("usernameInput").value,
+                        document.getElementById("passwordInput").value)}>Sign Up</button>
+                    <p id="errorP" className='text-center text-red-600'></p>
+                </div>
+            </div>
         </div>
     )
 }
