@@ -5,11 +5,10 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from 'react-router-dom';
 import '../css/SignIn.css';
 
-async function LogIn(email, password, changeAuth) {
+async function LogIn(email, password) {
     if (email && password) {
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            changeAuth(auth.currentUser);
         }
         catch (error) {
             document.getElementById("errorP").innerHTML = (error.code);
@@ -19,10 +18,8 @@ async function LogIn(email, password, changeAuth) {
         document.getElementById("errorP").innerHTML = "Enter both an email and a password.";
     }
 }
-async function LogOut(changeAuth) {
-    await auth.signOut();
-    changeAuth(auth.currentUser);
-    console.log(auth);
+async function LogOut() {
+    auth.signOut();
 }
 const SignIn = (props) => {
     const [state, changeState] = useState("initial")
@@ -31,7 +28,7 @@ const SignIn = (props) => {
             {props.authot &&
                 <div className='flex flex-col'>
                     <p>Logged in as {props.authot.displayName}</p>
-                    <button onClick={() => LogOut(props.changeAuth)}>Log out</button>
+                    <button onClick={() => LogOut()}>Log out</button>
                 </div>}
             {!props.authot && state === "initial" &&
                 <div className='flex flex-col'>
@@ -43,7 +40,7 @@ const SignIn = (props) => {
                     <label>Email:</label><input type="text" id="logInEmail"></input>
                     <label>Password:</label><input type="password" id="logInPassword"></input>
                     <button onClick={() => LogIn(document.getElementById("logInEmail").value,
-                        document.getElementById("logInPassword").value, props.changeAuth)}>Log In</button>
+                        document.getElementById("logInPassword").value)}>Log In</button>
                     <Link onClick={() => props.changeClick(false)} to="/Sign-Up" className='flex flex-row justify-center'>Sign up instead</Link>
                     <p id="errorP" className='text-center text-red-600'></p>
                 </div>}
