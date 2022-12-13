@@ -10,9 +10,9 @@ const Navbar = () => {
             <div style={{backgroundColor: "#fddaac"}}>
                 <h1 className="text-8xl text-center mp-4">CRISPIES</h1>
             </div>
-            <div className="buttonRow flex flex-row justify-between">
+            <div className="border-t-2 border-b-2 border-offblack flex flex-row justify-between">
                 <button>
-                    <h2 className="bg-black hover:bg-black-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500">Find Us</h2>
+                    <h2 className="h-11 bg-sea hover:bg-sealight text-white font-bold py-2 px-4 border-r-2 border-offblack">Find Us</h2>
                 </button>
                 <div className="flex flex-row">
                     <div className="buttonBorder">
