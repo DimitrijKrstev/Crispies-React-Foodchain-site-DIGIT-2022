@@ -1,6 +1,8 @@
 #SignContainer{
     margin-top: 2vh;
-    margin-left: calc(60vw + 20vh);
     background-color: rgba(220, 220, 220, 0.745);
-    width: 300px;
+    width: 200px;
+    z-index: 9;
+    margin-right: 10px;
+    border: solid 0.15rem black;
 }
