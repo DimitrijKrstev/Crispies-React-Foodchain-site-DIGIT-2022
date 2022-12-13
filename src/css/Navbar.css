@@ -13,3 +13,10 @@
     border-left: solid #171717 0.15rem;
 
 }
+
+#userDiv{
+    display: flex;
+    position: absolute;
+    justify-content: end;
+    right: 0;
+}

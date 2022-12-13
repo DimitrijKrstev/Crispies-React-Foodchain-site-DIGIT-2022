@@ -27,7 +27,7 @@ async function LogOut(changeAuth) {
 const SignIn = (props) => {
     const [state, changeState] = useState("initial")
     return (
-        <div className='flex flex-col items-center float-right' id="SignContainer">
+        <div className='flex flex-col items-center' id="SignContainer">
             {props.authot &&
                 <div className='flex flex-col'>
                     <p>Logged in as {props.authot.displayName}</p>
@@ -36,7 +36,7 @@ const SignIn = (props) => {
             {!props.authot && state === "initial" &&
                 <div className='flex flex-col'>
                     <button onClick={() => changeState("LogIn")}>Log in</button>
-                    <button onClick={() => changeState("SignUp")}>Sign up</button>
+                    <Link to="/Sign-Up" onClick={() => props.changeClick(false)} className='flex flex-row justify-center'>Sign up</Link>
                 </div>}
             {!props.authot && state === "LogIn" &&
                 <div className='flex flex-col'>

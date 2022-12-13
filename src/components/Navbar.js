@@ -11,7 +11,7 @@ const Navbar = (props) => {
     const [clicked, changeClick] = useState(false);
     return (
         <div>
-            <div style={{backgroundColor: "#fddaac"}} className="flex justify-center">
+            <div style={{ backgroundColor: "#fddaac" }} className="flex justify-center">
                 <Link to="/" className="text-8xl text-center mp-4" id="logoH1">CRISPIES</Link>
             </div>
             <div className="border-t-2 border-b-2 border-offblack flex flex-row justify-between">
@@ -28,7 +28,10 @@ const Navbar = (props) => {
                     </div>
                 </div>
             </div>
-            {clicked && <SignIn authot={props.authot} changeAuth={props.changeAuth} changeClick={changeClick}></SignIn>}
+            {clicked &&
+                <div id="userDiv">
+                    <SignIn authot={props.authot} changeAuth={props.changeAuth} changeClick={changeClick}></SignIn>
+                </div>}
         </div>
     )
 }
