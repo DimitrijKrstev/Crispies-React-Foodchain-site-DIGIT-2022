@@ -1,5 +1,16 @@
 h1 {
     font-family: RegularFedoka;
     color: mediumseagreen;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+
+    text-shadow: 1px 0 0 #171717, 0 -1px 0 #171717, 0 1px 0 #171717, -1px 0 0 #171717;
+
+}
+.buttonRow {
+    border-bottom: solid #171717 0.15rem;
+    border-top: solid #171717 0.15rem;
+    display: inline-block;
+}
+
+.buttonBorder {
+    border-left: solid #171717 0.15rem;;
 }
