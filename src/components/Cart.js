@@ -52,7 +52,7 @@ const Cart = ({validPaymentInfo}) => {
     useEffect(() => {
         onValue(cartRef, (snapshot) => {
             const rawCartObj = snapshot.val();
-            getFromFS(rawCartObj,cart,setCart);
+            getFromFS(rawCartObj,setCart);
         })
     }, [])
 
