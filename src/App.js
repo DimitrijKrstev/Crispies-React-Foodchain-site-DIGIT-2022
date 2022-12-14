@@ -7,7 +7,7 @@ import NotFound from './components/NotFound.js';
 import Navbar from "./components/Navbar";
 import SignUp from './components/SignUp.js';
 import { auth } from './index';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useState } from 'react';
 
 export const UserContext = React.createContext(null);
@@ -20,6 +20,21 @@ function App() {
   }, [])
   const [userState, setUserState] = useState(null);
   const [profileClicked, changeClick] = useState(false);
+  const ref = useRef(null);
+  const { onClickOutside } = props;
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        onClickOutside && onClickOutside();
+      }
+    };
+    document.addEventListener('click', handleClickOutside, true);
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
+  }, [ onClickOutside ]);
+
 
   return (
     <Router>
