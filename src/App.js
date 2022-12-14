@@ -19,19 +19,19 @@ function App() {
     })
   }, [])
   const [userState, setUserState] = useState(null);
-
+  const [profileClicked, changeClick] = useState(false);
 
   return (
     <Router>
       <UserContext.Provider value={userState}>
-        <Navbar authot={userState}></Navbar>
+        <Navbar authot={userState} clicked={profileClicked} changeClick={changeClick}></Navbar>
         <Routes>
           <Route exact path="/" element={<Home></Home>}></Route>
           <Route exact path="/Find-Us" element={<FindUs></FindUs>}></Route>
           <Route exact path="/Order" element={userState ?
             <Order></Order> :
             <Navigate to="/"></Navigate>}></Route>
-          <Route exact path="/Menu" element={<MenuPage></MenuPage>}></Route>
+          <Route exact path="/Menu" element={<MenuPage authot={userState} changeClick={changeClick}></MenuPage>}></Route>
           <Route exact path="/Sign-Up" element={!userState ?
             <SignUp authot={userState}></SignUp> :
             <Navigate to="/"></Navigate>}>

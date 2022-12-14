@@ -22,7 +22,7 @@ const Navbar = (props) => {
                     <div id="scroll-text" className="text-2xl mt-1">Crispy Chicken Burger • Chicken Wrap • Sexy Burger</div>
                 </div>
                 <div className="flex flex-row shrink-0">
-                    <button className="buttonBorder bg-sea hover:bg-sealight" onClick={() => changeClick(clicked === false)}>
+                    <button className="buttonBorder bg-sea hover:bg-sealight" onClick={() => props.changeClick(clicked === false)}>
                         <img src={accPic} className="float-right w-10 pt-1 mx-3 justify-end"></img>
                     </button>
                     <Link to='/Order' className="buttonBorder bg-sea hover:bg-sealight">
@@ -30,9 +30,9 @@ const Navbar = (props) => {
                     </Link>
                 </div>
             </div>
-            {clicked &&
+            {props.clicked &&
                 <div id="userDiv">
-                    <SignIn authot={props.authot} changeAuth={props.changeAuth} changeClick={changeClick}></SignIn>
+                    <SignIn authot={props.authot} changeAuth={props.changeAuth} changeClick={props.changeClick}></SignIn>
                 </div>}
         </div>
     )
