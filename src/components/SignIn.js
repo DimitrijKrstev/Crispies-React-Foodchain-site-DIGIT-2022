@@ -18,17 +18,16 @@ async function LogIn(email, password) {
         document.getElementById("errorP").innerHTML = "Enter both an email and a password.";
     }
 }
-async function LogOut() {
-    auth.signOut();
-}
+
 const SignIn = (props) => {
     const [state, changeState] = useState("initial")
+
     return (
         <div className='flex flex-col bg-beige' id="SignContainer">
             {props.authot &&
                 <div className='flex flex-col grow-0 border-2 border-offblack text-center'>
                     <p className="py-2 textSignin bg-beigeLight text-offblack">Logged in as: {props.authot.displayName}</p>
-                    <button className="textSignin border-t-2 border-offblack py-2 btnHover bg-sea" onClick={() => LogOut()}>Log out</button>
+                    <button className="textSignin border-t-2 border-offblack py-2 btnHover bg-sea" onClick={() => auth.signOut()}>Log out</button>
                 </div>}
             {!props.authot && state === "initial" &&
                 <div className='flex flex-col grow-0 w-full border-2 border-offblack'>
