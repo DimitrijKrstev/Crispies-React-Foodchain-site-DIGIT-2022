@@ -13,7 +13,8 @@ async function SignUpfunc(email, username, password) {
                 cardNo: '',
                 expiryDate: '',
                 cvv: '',
-                billingAddress: ''
+                billingAddress: '',
+                cart: null
             }).catch(error => console.log(error));
             await updateProfile(auth.currentUser, { displayName: username }).catch(
                 (err) => console.log(err)
