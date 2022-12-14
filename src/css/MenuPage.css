@@ -1,0 +1,10 @@
+.disabled{
+    pointer-events: none;
+    color: gray;
+}
+.cartButton{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    flex: 1;
+}
