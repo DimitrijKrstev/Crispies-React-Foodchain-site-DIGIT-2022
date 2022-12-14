@@ -7,7 +7,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
-    const [clicked, changeClick] = useState(false);
     return (
         <div>
             <div style={{backgroundColor: "#ffe1bd"}} className="flex justify-center">
@@ -22,7 +21,7 @@ const Navbar = (props) => {
                     <div id="scroll-text" className="text-2xl mt-1">Crispy Chicken Burger • Chicken Wrap • Sexy Burger</div>
                 </div>
                 <div className="flex flex-row shrink-0">
-                    <button className="buttonBorder bg-sea hover:bg-sealight" onClick={() => props.changeClick(clicked === false)}>
+                    <button className="buttonBorder bg-sea hover:bg-sealight" onClick={() => props.changeClick(!props.clicked)}>
                         <img src={accPic} className="float-right w-10 pt-1 mx-3 justify-end"></img>
                     </button>
                     <Link to='/Order' className="buttonBorder bg-sea hover:bg-sealight">
