@@ -24,25 +24,25 @@ async function LogOut() {
 const SignIn = (props) => {
     const [state, changeState] = useState("initial")
     return (
-        <div className='flex flex-col items-center' id="SignContainer">
+        <div className='flex flex-col' id="SignContainer">
             {props.authot &&
-                <div className='flex flex-col'>
-                    <p>Logged in as {props.authot.displayName}</p>
-                    <button onClick={() => LogOut()}>Log out</button>
+                <div className='flex flex-col grow-0 border-2 border-offblack text-center'>
+                    <p className="py-2 textSignin bg-beige text-offblack">Logged in as: {props.authot.displayName}</p>
+                    <button className="textSignin border-t-2 border-offblack py-2 btnHover" onClick={() => LogOut()}>Log out</button>
                 </div>}
             {!props.authot && state === "initial" &&
-                <div className='flex flex-col'>
-                    <button onClick={() => changeState("LogIn")}>Log in</button>
-                    <Link to="/Sign-Up" onClick={() => props.changeClick(false)} className='flex flex-row justify-center'>Sign up</Link>
+                <div className='flex flex-col grow-0 w-full border-2 border-offblack'>
+                    <button className="textSignin py-2 btnHover" onClick={() => changeState("LogIn")}>Log in</button>
+                    <Link to="/Sign-Up" onClick={() => props.changeClick(false)} className='flex flex-row justify-center textSignin btnHover py-2 border-t-2 border-offblack'>Sign up</Link>
                 </div>}
             {!props.authot && state === "LogIn" &&
-                <div className='flex flex-col'>
-                    <label>Email:</label><input type="text" id="logInEmail"></input>
-                    <label>Password:</label><input type="password" id="logInPassword"></input>
-                    <button onClick={() => LogIn(document.getElementById("logInEmail").value,
+                <div className='flex flex-col grow-0 w-full border-2 border-offblack'>
+                    <div className="mx-auto mt-2 flex-col"><label className="textSignin flex">Email </label><input type="text" id="logInEmail" className="flex textSignin"></input></div>
+                    <div className="mx-auto mt-1 mb-4 flex-col"><label className="textSignin flex">Password </label><input type="password" id="logInPassword" className="flex textSignin"></input></div>
+                    <button className="textSignin btnHover border-t-2 border-offblack py-2" onClick={() => LogIn(document.getElementById("logInEmail").value,
                         document.getElementById("logInPassword").value)}>Log In</button>
-                    <Link onClick={() => props.changeClick(false)} to="/Sign-Up" className='flex flex-row justify-center'>Sign up instead</Link>
-                    <p id="errorP" className='text-center text-red-600'></p>
+                    <Link onClick={() => props.changeClick(false)} to="/Sign-Up" className='flex flex-row justify-center textSignin btnHover border-t-2 border-offblack py-2'>Sign up instead</Link>
+                    <p id="errorP" className='text-center bg-offblack text-terra flex-row textSignin '></p>
                 </div>}
         </div>
     )

@@ -14,9 +14,9 @@ const Navbar = (props) => {
                 <Link to="/" className="text-8xl text-center mp-4" id="logoH1">CRISPIES</Link>
             </div>
             <div className="border-t-2 border-b-2 border-offblack flex flex-row justify-between h-12">
-                <Link to="/Menu" className="bg-sea hover:bg-sealight text-white font-bold py-2 px-2 border-r-2
+                <Link to="/Menu" className="bg-sea hover:bg-sealight font-bold py-2 px-2 border-r-2
                 border-offblack text-center flex items-center text-offblack shrink-0 itemNav">Menu</Link>
-                <Link to="/Find-Us" className="bg-sea hover:bg-sealight text-white font-bold py-2 px-2 border-r-2
+                <Link to="/Find-Us" className="bg-sea hover:bg-sealight font-bold py-2 px-2 border-r-2
                 border-offblack text-center flex items-center text-offblack shrink-0 itemNav">Find Us</Link>
                 <div className="flex-auto whitespace-nowrap text-offblack bg-terra" id="scroll-container">
                     <div id="scroll-text" className="text-2xl mt-1">Crispy Chicken Burger • Chicken Wrap • Sexy Burger</div>

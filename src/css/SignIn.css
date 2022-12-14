@@ -1,11 +1,24 @@
 #SignContainer{
-    margin-top: 2vh;
-    margin-right: 1.5vh;
-    background-color: rgba(220, 220, 220, 0.745);
-    width: 200px;
-    z-index: 9;
-    border: solid 0.15rem black;
+    margin-top: -0.2vh;
+    margin-right: 8vh;
+    background-color: mediumseagreen;
+    width: 18rem;
+    z-index: 1;
 }
 input{
     border: solid 0.15rem black;
+    font-family: Lexend;
+    outline: none;
+    width: 14rem;
+}
+textarea:focus, input:focus{
+    font-family: Lexend;
+}
+
+.textSignin {
+    font-family: Lexend;
+}
+
+.btnHover:hover{
+    background-color: #7DDEA9;
 }
