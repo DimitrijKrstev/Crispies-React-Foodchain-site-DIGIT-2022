@@ -1,11 +1,29 @@
 import React, { useContext, useEffect } from 'react'
 
 import { db, rtdb } from '../index'
-import {ref, onValue} from 'firebase/database'
+import {ref, onValue, remove} from 'firebase/database'
 import { UserContext } from '../App'
 import { useState } from 'react'
 import {doc, getDoc} from 'firebase/firestore'
 import "../css/Cart.css"
+
+
+async function getFromFS(rawCartObj, cart, setCart) {
+    const newCart = {};
+    for(let menuItemId in rawCartObj) {
+        const item = await getDoc(doc(db,"menuItems",menuItemId));
+        const cartEntry = item.data();
+        // console.log(cartEntry);
+        newCart[menuItemId] = {
+            name: cartEntry.name,
+            quantity: rawCartObj[menuItemId],
+            picture: cartEntry.picture,
+            priceEach: cartEntry.price
+        }
+        // console.log("New cart: ", newCart);
+    }
+    setCart(newCart);
+}
 
 const Cart = () => {
     const currentUser = useContext(UserContext);
@@ -13,31 +31,20 @@ const Cart = () => {
 
     const [cart, setCart] = useState({});
 
-    useEffect(() => {
-        console.log("NESHO");
-    },[cart])
+    const removeCartItem = (id) => {
+        console.log(`removeCartItem(${id})`);
+        const removeReference = ref(rtdb,`users/${currentUser.uid}/${id}`);
+        remove(removeReference);
+    }
+
     useEffect(() => {
         onValue(cartRef, (snapshot) => {
             const rawCartObj = snapshot.val();
-            // console.log(snapshot.val());
-
-            Object.keys(rawCartObj).forEach(menuItemId => {
-                getDoc(doc(db,"menuItems",menuItemId)).then(doc => {
-                    const cartEntry = doc.data();
-                    // console.log(cartEntry);
-                    const newCart = cart;
-                    newCart[menuItemId] = {
-                        name: cartEntry.name,
-                        quantity: rawCartObj[menuItemId],
-                        picture: cartEntry.picture,
-                        priceEach: cartEntry.price
-                    }
-                    // console.log("New cart: ", newCart);
-                    setCart(newCart);
-                })
-            })
+            getFromFS(rawCartObj,cart,setCart);
         })
     }, [])
+
+    console.log(cart);
 
     return (
         <div className='Cart'>
@@ -49,6 +56,7 @@ const Cart = () => {
                         <p>{parseInt(cart[item].quantity)}</p>
                     </div>
                     <p className="justify-self-end">{parseInt(cart[item].quantity) * parseInt(cart[item].priceEach)}</p>
+                    <button onClick={() => removeCartItem(item)}>Remove</button>
                 </div>
             ))}
         </div>
