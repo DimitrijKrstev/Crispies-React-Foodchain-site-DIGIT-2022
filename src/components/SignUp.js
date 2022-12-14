@@ -8,12 +8,12 @@ async function SignUpfunc(email, username, password) {
         if (username) {
             await createUserWithEmailAndPassword(auth, email, password);
             await setDoc(doc(db, 'users', auth.currentUser.uid), {
-                fullName: {data: '', valid: true},
-                deliveryAddress: {data: '', valid: true},
-                cardNo: {data: '', valid: true},
-                expiryDate: {data: '', valid: true},
-                cvv: {data: '', valid: true},
-                billingAddress: {data: '', valid: true}
+                fullName: '',
+                deliveryAddress: '',
+                cardNo: '',
+                expiryDate: '',
+                cvv: '',
+                billingAddress: ''
             }).catch(error => console.log(error));
             await updateProfile(auth.currentUser, { displayName: username }).catch(
                 (err) => console.log(err)
