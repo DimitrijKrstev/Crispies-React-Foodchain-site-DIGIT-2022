@@ -1,12 +1,11 @@
 #SignContainer{
     margin-top: -2px;
     margin-right: 64px;
-    background-color: mediumseagreen;
     width: 18rem;
     z-index: 1;
 }
 input{
-    border: solid 0.15rem black;
+    border: solid 2px black;
     font-family: Lexend;
     outline: none;
     width: 14rem;
