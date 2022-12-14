@@ -20,8 +20,7 @@ const FindUs = () => {
   
   return (
     <div className='FindUs'>
-      <h1>Find Us</h1>
-      <p>Our locations:</p>
+      <h1 className=" border-b-2 border-offblack text-4xl text-center bg-beige titleLocations py-3">Our locations</h1>
       <div className='flex justify-evenly flex-wrap'>
       {locations.map(l => 
         <FindUsCard key={l.id} 
@@ -35,7 +34,7 @@ const FindUs = () => {
         )}
       </div>
       <div id="map">
-        <img src={mapOpened} />
+        <img className="mx-auto border-2 border-offblack" src={mapOpened} />
       </div>
     </div>
   )

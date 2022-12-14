@@ -10,7 +10,7 @@ module.exports = {
         'sealight': '#7ddea9',
         'offblack': '#171717',
         'beige': '#FFE1BD',
-        'beigeLight': '#fff0dc',
+        'beigeLight': '#fdf6ec',
         'terra': '#fd9e90',
       },
     },
