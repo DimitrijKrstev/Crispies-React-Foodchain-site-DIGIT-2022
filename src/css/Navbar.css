@@ -24,9 +24,8 @@
     text-overflow: clip;
 }
 #scroll-text {
-    font-family: RegularFedoka;
+    font-family: Lexend;
     transform: translateX(100%);
-
     -moz-animation: my-animation 20s linear infinite;
     -webkit-animation: my-animation 20s linear infinite;
     animation: my-animation 20s linear infinite;
@@ -37,7 +36,7 @@
         transform: translateX(100%);
     }
     to {
-        transform: translateX(-150%);
+        transform: translateX(-190%);
     }
 }
 
@@ -46,4 +45,9 @@
     position: absolute;
     justify-content: end;
     right: 0;
+}
+
+.itemNav{
+    font-family: Lexend;
+    color: #171717;
 }

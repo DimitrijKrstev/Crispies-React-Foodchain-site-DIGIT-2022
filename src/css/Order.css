@@ -1,0 +1,18 @@
+.Order {
+    max-width: 500px;
+    margin: auto;
+}
+.Order h1, .Order p {
+    text-align: center;
+}
+.Order table {
+    margin: auto;
+    margin-top: 20px;
+}
+.Order button {
+    border: 1px solid black;
+    padding: 0 15px;
+}
+.purchaseInformation>button {
+    margin: auto;
+}
