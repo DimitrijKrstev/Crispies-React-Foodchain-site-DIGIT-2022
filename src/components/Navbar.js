@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
     return (
-        <div>
+        <div style={{ position: 'relative', zIndex: '10'}}>
             <div style={{backgroundColor: "#ffe1bd"}} className="flex justify-center">
                 <Link to="/" className="text-8xl text-center mp-4" id="logoH1">CRISPIES</Link>
             </div>
