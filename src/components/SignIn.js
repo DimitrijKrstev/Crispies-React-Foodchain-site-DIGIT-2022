@@ -23,7 +23,7 @@ const SignIn = (props) => {
     const [state, changeState] = useState("initial")
 
     return (
-        <div className='flex flex-col bg-beige' id="SignContainer">
+        <div className='flex flex-col bg-beige' id="SignContainer" style={{ position: 'relative', zIndex: '30'}}>
             {props.authot &&
                 <div className='flex flex-col grow-0 border-2 border-offblack text-center'>
                     <p className="py-2 textSignin bg-beigeLight text-offblack">Logged in as: {props.authot.displayName}</p>

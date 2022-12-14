@@ -43,7 +43,7 @@ const SignUp = () => {
                 <img src={nugget} className="i n6 nuggetRain"></img>
             </div>
             <div className='flex justify-center'>
-                <div className='flex mt-16 border-2 border-offblack bg-beige z-20'>
+                <div className='flex mt-16 border-2 border-offblack bg-beige' style={{zIndex: 1}}>
                     <div className='flex flex-col grow-0 w-full'>
                         <label className="textSignup w-full mt-5 mx-10">Email</label><input type="text" id="emailInput" className="textSignup mx-10"></input>
                         <label className="textSignup mx-10">Username</label><input type="text" id="usernameInput" className="textSignup mx-10"></input>
