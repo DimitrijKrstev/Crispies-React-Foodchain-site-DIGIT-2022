@@ -47,8 +47,11 @@ const MenuPage = (props) => {
       <div className='mt-10 flex justify-center'>
         <Icon type={'burger'}></Icon><Icon type={'wrap'}></Icon><Icon type={'taco'}></Icon>
       </div>
-      <div className='mt-5 border-2 border-black flex justify-center w-1/2'>
-        {ready && itemCards && itemCards.map((item) => (<MenuCard item={item} authot={props.authot} addCart={addCart}></MenuCard>))}
+      <div className='mt-5 border-2 border-black flex flex-col w-1/2 items-center'>
+        <h1>Burgers</h1>
+        <div className='flex justify-center'>
+          {ready && itemCards && itemCards.map((item) => (<MenuCard item={item} authot={props.authot} addCart={addCart} changeClick={props.changeClick}></MenuCard>))}
+        </div>
       </div>
     </div>
   )
