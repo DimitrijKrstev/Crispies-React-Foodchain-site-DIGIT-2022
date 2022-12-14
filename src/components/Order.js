@@ -4,27 +4,38 @@ import { UserContext } from '../App';
 import OrderInfo from './OrderInfo';
 import {doc, setDoc} from '@firebase/firestore'
 import {db} from '../index'
+import '../css/Order.css'
+
+export const EditableContext = React.createContext(false);
 
 const Order = () => {
   const userState = useContext(UserContext);
 
-  const [fullName, setFullName] = useState("aaaaa");
+  const [fullName, setFullName] = useState("");
   const [deliveryAddress, setDeliveryAddress] = useState("");
   const [cardNo, setCardNo] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
   const [billingAddress, setBillingAddress] = useState("");
 
+  const valid = fullName.valid && deliveryAddress.valid && cardNo.valid 
+  && expiryDate.valid && cvv.valid && billingAddress.valid;
+  
+  const [error, setError] = useState(false);
+
   useEffect(() => {
     onSnapshot(doc(db,"users",userState.uid), doc => {
       let data = doc.data();
-      setDeliveryAddress(data.deliveryAddress);
-      setCardNo(data.cardNo);
-      setExpiryDate(data.expiryDate);
-      setCvv(data.cvv);
-      setBillingAddress(data.billingAddress);
+      setFullName({data: data.fullName, valid:true})
+      setDeliveryAddress({data: data.deliveryAddress, valid:true});
+      setCardNo({data: data.cardNo, valid: true});
+      setExpiryDate({data: data.expiryDate, valid: true});
+      setCvv({data: data.cvv, valid: true});
+      setBillingAddress({data: data.billingAddress, valid: true});
     })
   },[])
+
+  const [submitMarker, setSubmitMarker] = useState(false);
 
   return (
     <div className="Order">
@@ -32,24 +43,52 @@ const Order = () => {
         <div className='purchaseInformation'>
           <h1>Ready to order?</h1>
           <p>Please confirm/complete your details below:</p>
+          <EditableContext.Provider value={submitMarker}>
           <table><tbody>
-            <OrderInfo displayText="Full name" state={fullName} setState={setFullName}/>
+            <OrderInfo displayText="Full name" 
+            state={fullName} 
+            setState={setFullName} 
+            validate={new RegExp(/[a-zA-Z]+\s[a-zA-Z]+/)}/>
             <OrderInfo displayText="Delivery address" state={deliveryAddress} setState={setDeliveryAddress}/>
-            <OrderInfo displayText="Card no." state={cardNo} setState={setCardNo}/>
-            <OrderInfo displayText="Expiry date" state={expiryDate} setState={setExpiryDate}/>
-            <OrderInfo displayText="CVV" state={cvv} setState={setCvv}/>
+            <OrderInfo displayText="Card no." 
+            state={cardNo} 
+            setState={setCardNo}
+            validate={new RegExp(/^[0-9]{15,16}$/)}
+            volatile={true}
+            />
+            <OrderInfo displayText="Expiry date" 
+            state={expiryDate} 
+            setState={setExpiryDate}
+            validate={new RegExp(/^[0-9]{2}\/[0-9]{2}$/)}/>
+            <OrderInfo displayText="CVV" 
+            state={cvv} 
+            setState={setCvv}
+            validate={new RegExp(/^[0-9]{3}$/)}/>
             <OrderInfo displayText="Billing address" state={billingAddress} setState={setBillingAddress}/>
           </tbody></table>
-          <button onClick={() => {
-            setDoc(doc(db,"users",userState.uid), {
-              fullName: fullName,
-              deliveryAddress: deliveryAddress,
-              cardNo: cardNo,
-              expiryDate: expiryDate,
-              cvv: cvv,
-              billingAddress: billingAddress
-            })
-          }}>Set</button>
+          </EditableContext.Provider>
+          <div className='flex justify-center'>
+            <button onClick={() => {
+              if (valid) {
+                setSubmitMarker(!submitMarker);
+                setError(false);
+                setDoc(doc(db,"users",userState.uid), {
+                  fullName: fullName.data,
+                  deliveryAddress: deliveryAddress.data,
+                  cardNo: "*******-"+cardNo.data.substring(cardNo.data.length-4),
+                  expiryDate: expiryDate.data,
+                  cvv: cvv.data,
+                  billingAddress: billingAddress.data
+                }).then((status) => {
+                  console.log(status);
+                })
+              }
+              else setError(true);
+            }}>Set</button>
+            {error &&
+              <div>ERROR</div>
+            }
+          </div>
         </div>
       }
     </div>
