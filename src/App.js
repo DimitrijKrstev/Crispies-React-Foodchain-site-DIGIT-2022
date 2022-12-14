@@ -15,7 +15,6 @@ function App() {
   //useEffect za da ne se izvrsi poveke pati
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
-      console.log(user);
       setUserState(user);
     })
   }, [])

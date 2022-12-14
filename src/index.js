@@ -7,6 +7,7 @@ import './css/index.css';
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { getDatabase } from "firebase/database"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -14,6 +15,7 @@ import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyD_OeG5MmNul_6QhTtB_16zvamik9uBD2c",
   authDomain: "crispies-3dcb9.firebaseapp.com",
+  databaseURL: "https://crispies-3dcb9-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "crispies-3dcb9",
   storageBucket: "crispies-3dcb9.appspot.com",
   messagingSenderId: "1075287717682",
@@ -24,6 +26,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore();
+export const rtdb = getDatabase(app);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

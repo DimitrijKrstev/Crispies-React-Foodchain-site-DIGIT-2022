@@ -1,15 +1,15 @@
-.Order {
+.PaymentInfo {
     max-width: 500px;
     margin: auto;
 }
-.Order h1, .Order p {
+.PaymentInfo h1, .PaymentInfo p {
     text-align: center;
 }
-.Order table {
+.PaymentInfo table {
     margin: auto;
     margin-top: 20px;
 }
-.Order button {
+.PaymentInfo button {
     border: 1px solid black;
     padding: 0 15px;
 }
