@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../App'
-import { EditableContext } from './Order';
+import { EditableContext } from './PaymentInfo';
 
-const OrderInfo = (props) => {
+const PaymentInfoItem = (props) => {
     const {validate, volatile, displayText, state, setState} = props;
 
     //Dali e pritisnato kopceto edit
@@ -10,11 +10,9 @@ const OrderInfo = (props) => {
 
     //Logiran user
     const user = useContext(UserContext);
-    console.log(validate);
 
     const clickState = useContext(EditableContext);
     useEffect(() => {
-        console.log("Ifhiefiehfiefheih");
         setEdited(false);
     }, [clickState])
 
@@ -34,7 +32,7 @@ const OrderInfo = (props) => {
         <td>
             {!isBeingEdited && 
                 <button onClick={() => {
-                    if(volatile) setState("")
+                    if(volatile) setState({data: "", valid: false})
                     setEdited(true)
                 }}>Edit</button>
             }
@@ -43,9 +41,9 @@ const OrderInfo = (props) => {
   )
 }
 
-OrderInfo.defaultProps = {
+PaymentInfoItem.defaultProps = {
     validate: new RegExp(""),
     volatile: false
 }
 
-export default OrderInfo
+export default PaymentInfoItem
