@@ -7,23 +7,39 @@ import NotFound from './components/NotFound.js';
 import Navbar from "./components/Navbar";
 import SignUp from './components/SignUp.js';
 import { auth } from './index';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 
+export const UserContext = React.createContext(null);
 function App() {
-  const [authot, changeAuth] = useState(auth.currentUser);
+  //useEffect za da ne se izvrsi poveke pati
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      console.log(user);
+      setUserState(user);
+    })
+  }, [])
+  const [userState, setUserState] = useState(null);
+
+
   return (
     <Router>
-      <Navbar authot={authot} changeAuth={changeAuth}></Navbar>
-      <Routes>
-        <Route exact path="/" element={<Home></Home>}></Route>
-        <Route exact path="/Find-Us" element={<FindUs></FindUs>}></Route>
-        <Route exact path="/Order" element={authot ? <Order></Order> :
-          <Navigate to="/"></Navigate>}></Route>
-        <Route exact path="/Menu" element={<MenuPage></MenuPage>}></Route>
-        <Route exact path="/Sign-Up" element={!authot ? <SignUp authot={authot} changeAuth={changeAuth}></SignUp> :
-          <Navigate to="/"></Navigate>}></Route>
-        <Route path="*" element={<NotFound></NotFound>}></Route>
-      </Routes>
+      <UserContext.Provider value={userState}>
+        <Navbar authot={userState}></Navbar>
+        <Routes>
+          <Route exact path="/" element={<Home></Home>}></Route>
+          <Route exact path="/Find-Us" element={<FindUs></FindUs>}></Route>
+          <Route exact path="/Order" element={userState ?
+            <Order></Order> :
+            <Navigate to="/"></Navigate>}></Route>
+          <Route exact path="/Menu" element={<MenuPage></MenuPage>}></Route>
+          <Route exact path="/Sign-Up" element={!userState ?
+            <SignUp authot={userState}></SignUp> :
+            <Navigate to="/"></Navigate>}>
+          </Route>
+          <Route path="*" element={<NotFound></NotFound>}></Route>
+        </Routes>
+      </UserContext.Provider>
     </Router>
   );
 }

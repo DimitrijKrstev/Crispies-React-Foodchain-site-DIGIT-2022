@@ -1,3 +1,4 @@
+/* #map e golemata mapa (pc), .verticalMap e mobilna mapa, findUsCard */
 .FindUsCard {
     padding: 20px;
 }
@@ -8,13 +9,13 @@
     padding: 1px 15px;
     border: 1px solid black
 }
-.FindUs img {
+#map {
     margin: auto;
     margin-top: 20px;
     max-height: 500px;
     max-width: 500px;
 }
-.FindUsCard img {
+.verticalMap {
     display: none;
 }
 .mapButtonVerticalShow, .mapButtonVerticalHide {

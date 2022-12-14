@@ -4,7 +4,6 @@ import { db } from '../index'
 import { collection, getDocs, doc } from '@firebase/firestore'
 import "../css/FindUs.css"
 
-
 const FindUs = () => {
   const [locations, setLocations] = useState([]);
   const [mapOpened, setMapOpened] = useState('default');
