@@ -1,13 +1,14 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { collection, query, getDocs, updateDoc } from 'firebase/firestore';
-import { db } from '../index';
+import { ref, set } from "firebase/database";
+import { auth, db, rtdb } from '../index';
 import '../css/MenuPage.css'
 import MenuCard from './MenuCard';
 
 const Icon = (props) => {
   let icon;
-  switch(props.type){
+  switch (props.type) {
     case 'burger': icon = 'https://cdn-icons-png.flaticon.com/512/1161/1161695.png'; break;
     case 'wrap': icon = 'https://cdn-icons-png.flaticon.com/512/5793/5793750.png'; break;
     case 'taco': icon = 'https://cdn-icons-png.flaticon.com/512/3946/3946513.png'; break;
@@ -20,7 +21,7 @@ const Icon = (props) => {
 }
 
 const MenuPage = (props) => {
-  const [itemCards, setItems] = useState();
+  const [burgers, setBurgers] = useState();
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
@@ -32,26 +33,43 @@ const MenuPage = (props) => {
         documents.push({ ...doc.data(), id: doc.id })
       });
       console.log(documents)
-      setItems(documents)
+      setBurgers(documents)
       setReady(true);
     }
     getItems();
   }, [])
 
-  const addCart = (id) => {
-    
+  const addCart = (id, count) => {
+      set(ref(rtdb, 'users/' + props.authot.uid + "/" + id),
+        count
+      );
+  }
+
+  const Section = (props2) => {
+    return (
+      <div>
+        <h1 className='text-center'>{props2.title}</h1>
+        <div className='flex justify-center flex-wrap'>
+          {props2.itemCards && props2.itemCards.map((item) => (<MenuCard item={item} authot={props.authot} addCart={addCart} changeClick={props.changeClick}></MenuCard>))}
+        </div>
+      </div>
+    )
   }
 
   return (
     <div className='flex flex-col items-center'>
-      <div className='mt-10 flex justify-center'>
-        <Icon type={'burger'}></Icon><Icon type={'wrap'}></Icon><Icon type={'taco'}></Icon>
+      <div className='mt-10 flex justify-center flex-wrap'>
+        <Icon type={'burger'}></Icon><Icon type={'wrap'}></Icon><Icon type={'taco'}></Icon><Icon type={'burger'}></Icon>
+        <Icon type={'burger'}></Icon><Icon type={'burger'}></Icon><Icon type={'burger'}></Icon>
       </div>
-      <div className='mt-5 border-2 border-black flex flex-col w-1/2 items-center'>
-        <h1>Burgers</h1>
-        <div className='flex justify-center'>
-          {ready && itemCards && itemCards.map((item) => (<MenuCard item={item} authot={props.authot} addCart={addCart} changeClick={props.changeClick}></MenuCard>))}
-        </div>
+      <div className='mt-5 border-2 border-black flex flex-col w-[70%] items-center flex-wrap'>
+        <Section title={"Combos"}></Section>
+        <Section title={"Burgers"} itemCards={burgers}></Section>
+        <Section title={"Burgers"}></Section>
+        <Section title={"Snacks"}></Section>
+        <Section title={"Fries"}></Section>
+        <Section title={"Drinks"}></Section>
+        <Section title={"Sauces"}></Section>
       </div>
     </div>
   )

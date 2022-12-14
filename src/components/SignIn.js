@@ -18,11 +18,10 @@ async function LogIn(email, password) {
         document.getElementById("errorP").innerHTML = "Enter both an email and a password.";
     }
 }
-async function LogOut() {
-    auth.signOut();
-}
+
 const SignIn = (props) => {
     const [state, changeState] = useState("initial")
+    
     return (
         <div className='flex flex-col' id="SignContainer">
             {props.authot &&

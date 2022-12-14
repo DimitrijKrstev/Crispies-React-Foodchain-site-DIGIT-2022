@@ -12,7 +12,7 @@ const MenuCard = (props) => {
             <p className='text-center'>Price: {props.item.price}</p>
             <div className={'flex flex-row self-stretch' + (!props.authot ? " disabled" : '')}>
                 <button onClick={decrement} className="cartButton border-t-2 border-black">-</button>
-                <button className={'border-2 border-black border-b-0' + (!props.authot ? " disabled" : '')} onClick={props.addCart(props.item.id)}>
+                <button className={'border-2 border-black border-b-0' + (!props.authot ? " disabled" : '')} onClick={() => props.addCart(props.item.id, count)}>
                     Add {(count > 1) && count} to cart</button>
                 <button className="cartButton border-t-2 border-black" onClick={() => updateCount(count + 1)}>+</button>
             </div>
