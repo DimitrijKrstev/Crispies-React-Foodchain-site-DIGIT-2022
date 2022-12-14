@@ -6,4 +6,8 @@
     src: local("FedokaOne-Regular"),
     url("/src/fonts/FredokaOne-Regular.ttf") format("truetype");
 }
-
+@font-face {
+    font-family: "Lexend";
+    src: local("Lexend"),
+    url("/src/fonts/LexendDeca-VariableFont_wght.ttf") format("truetype");
+}
