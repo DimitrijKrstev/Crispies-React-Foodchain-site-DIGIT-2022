@@ -7,8 +7,7 @@ import NotFound from './components/NotFound.js';
 import Navbar from "./components/Navbar";
 import SignUp from './components/SignUp.js';
 import { auth } from './index';
-import React, { useEffect, useRef } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState} from 'react';
 
 export const UserContext = React.createContext(null);
 function App() {
@@ -20,7 +19,6 @@ function App() {
   }, [])
   const [userState, setUserState] = useState(null);
   const [profileClicked, changeClick] = useState(false);
-  const ref = useRef(null);
 
   return (
     <Router>

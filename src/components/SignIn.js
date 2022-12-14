@@ -27,7 +27,7 @@ const SignIn = (props) => {
             {props.authot &&
                 <div className='flex flex-col grow-0 border-2 border-offblack text-center'>
                     <p className="py-2 textSignin bg-beigeLight text-offblack">Logged in as: {props.authot.displayName}</p>
-                    <button className="textSignin border-t-2 border-offblack py-2 btnHover" onClick={() => auth.logOut()}>Log out</button>
+                    <button className="textSignin border-t-2 border-offblack py-2 btnHover" onClick={() => auth.signOut()}>Log out</button>
                 </div>}
             {!props.authot && state === "initial" &&
                 <div className='flex flex-col grow-0 w-full border-2 border-offblack'>
