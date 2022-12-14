@@ -9,6 +9,8 @@ module.exports = {
         'sea': '#3CB371',
         'sealight': '#7ddea9',
         'offblack': '#171717',
+        'beige': '#FFE1BD',
+        'terra': '#fc897a',
       },
     },
   },
