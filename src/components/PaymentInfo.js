@@ -45,12 +45,12 @@ const PaymentInfo = ({validPaymentInfo, setValidPaymentInfo}) => {
 
   return (
     <div className="PaymentInfo">
-      {userState && 
-        <div className='purchaseInformation'>
-          <h1>Ready to order?</h1>
-          <p>Please confirm/complete your details below:</p>
+      <h1 className=" border-b-2 border-offblack text-4xl text-center bg-beige titleLocations py-3">Ready to Order?</h1>
+      {userState &&
+        <div className='purchaseInformation flex flex-col w-fit mx-auto border-x-2 border-offblack bg-beige mt-8 textSignin'>
+          <p className="p-2 textSignup text-center mb-2 bg-offblack w-full text-beige">Please confirm/complete your details below:</p>
           <EditableContext.Provider value={submitMarker}>
-          <table><tbody>
+          <table className="mx-10"><tbody>
             <PaymentInfoItem displayText="Full name" 
             state={fullName} 
             setState={setFullName} 
@@ -75,8 +75,8 @@ const PaymentInfo = ({validPaymentInfo, setValidPaymentInfo}) => {
             <PaymentInfoItem displayText="Billing address" state={billingAddress} setState={setBillingAddress}/>
           </tbody></table>
           </EditableContext.Provider>
-          <div className='flex justify-center'>
-            <button onClick={() => {
+          <div className='flex justify-center flex-col'>
+            <button className="w-full text-2xl border-y-2 border-offblack text-offblack mt-4 btnHover textSignup bg-sea" onClick={() => {
               if (validPaymentInfo) {
                 setSubmitMarker(!submitMarker);
                 setError(false);
@@ -92,7 +92,7 @@ const PaymentInfo = ({validPaymentInfo, setValidPaymentInfo}) => {
               else setError(true);
             }}>Set</button>
             {error &&
-              <div>ERROR</div>
+              <div className="bg-offblack textSignin text-terra text-center w-full">Invalid data entered</div>
             }
           </div>
         </div>

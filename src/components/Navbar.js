@@ -21,7 +21,7 @@ const Navbar = (props) => {
             console.log("TEST");
             if (event.target !== undefined && boxRef.current && !boxRef.current.contains(event.target) && (topButtonRef.current && !topButtonRef.current.contains(event.target))) {
                 console.log("TEST2")
-                props.changeClick(true);
+                props.changeClick(false);
             }
         }
         document.addEventListener("click", handleOutsideClick);

@@ -20,7 +20,7 @@ textarea:focus, input:focus{
 
     display: inline-flex;
     width: 9vh;
-    animation: anim 2.5s ease-in-out infinite;
+    animation: anim 8.5s ease-in-out infinite;
     transform:  translateY(-420%) rotate(0deg);
     margin-top: -500px;
 
