@@ -5,6 +5,7 @@ import { ref, set, get, child, getDatabase } from "firebase/database";
 import { db, rtdb } from '../index';
 import '../css/MenuPage.css'
 import MenuCard from './MenuCard';
+import Notification from './Notification';
 
 const Icon = (props) => {
   let icon;
@@ -35,7 +36,7 @@ const MenuPage = (props) => {
   const [items, setItems] = useState();
   const [ready, setReady] = useState(false);
   const [fullItems, setFullItems] = useState();
-  const [notifCount, setNotifCount] = useState(0);
+  const [notifObj, setNotifObj] = useState({text:'', timestamp:0});
 
   useEffect(() => {
     const q = query(collection(db, 'menuItems')/*,orderBy('timeCreated')*/);
@@ -58,8 +59,13 @@ const MenuPage = (props) => {
       filtered.length > 0 && <div id={props2.id}>
         <h1 className='text-center textSignin text-3xl my-8'>{props2.title}</h1>
         <div className='flex justify-center flex-wrap'>
-          {filtered.map((item) => (<MenuCard item={item} authot={props.authot} addCart={addCart} changeClick={props.changeClick}
-            setNotifCount={setNotifCount}></MenuCard>))}
+          {filtered.map((item) => (
+            <MenuCard item={item} 
+            authot={props.authot} 
+            addCart={addCart} 
+            changeClick={props.changeClick}
+            setNotifObj={setNotifObj}>
+            </MenuCard>))}
         </div>
       </div>
     )
@@ -71,13 +77,8 @@ const MenuPage = (props) => {
 
   return (
     <div>
-
+      <Notification input={notifObj}></Notification>
       <h1 className=" border-b-2 border-offblack text-4xl text-center bg-beige titleLocations py-3">Menu</h1>
-      <div className='fixed right-0 top-5 z-10'>
-        <div id="notif" className='hide'>
-          <p className="bg-terra text-offblack p-3">Successfully added {notifCount} items to the cart.</p>
-        </div>
-      </div>
 
       <div className='flex flex-col items-center'>
         <div className='mt-2 flex justify-center flex-wrap'>

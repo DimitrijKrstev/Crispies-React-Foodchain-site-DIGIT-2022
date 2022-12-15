@@ -1,15 +1,10 @@
 import React, { useState } from 'react'
+import { showNotif } from './Notification';
 
 const MenuCard = (props) => {
     const [count, updateCount] = useState(1);
     const decrement = () => {
         if (count > 1) updateCount(count - 1);
-    }
-    function fadeNotif() {
-        let notifDiv = document.getElementById("notif");
-        setTimeout(() => (notifDiv.className = "hide"), 1000);
-        notifDiv.className = "";
-        props.setNotifCount(count);
     }
     function logInClicked(e, changeClick){
         e.nativeEvent.stopImmediatePropagation();
@@ -17,7 +12,7 @@ const MenuCard = (props) => {
     }
     function clicked(id){
         props.addCart(id, count);
-        fadeNotif();
+        showNotif(`Added ${count} of ${props.item.name} to cart.`, props.setNotifObj);
     }
     return (
         <div className='flex flex-col border-2 border-offblack m-1 items-stretch grid max-w-sm bg-beige w-80 mt-4'>

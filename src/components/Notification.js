@@ -19,7 +19,7 @@ const Notification = (props) => {
       }, 250)
       element.className = "Notification";
     }
-  }, [props.input, notifRef])
+  }, [props.input])
 
   return (
     props.input.text && 
