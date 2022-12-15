@@ -25,8 +25,8 @@ const Navbar = (props) => {
     },[boxRef]);
 
     return (
-        <div>
-            <div style={{ backgroundColor: "#ffe1bd" }} className="flex justify-center">
+        <div style={{ position: 'relative', zIndex: '10'}}>
+            <div style={{backgroundColor: "#ffe1bd"}} className="flex justify-center">
                 <Link to="/" className="text-8xl text-center mp-4" id="logoH1">CRISPIES</Link>
             </div>
             <div className="border-t-2 border-b-2 border-offblack flex flex-row justify-between h-12">

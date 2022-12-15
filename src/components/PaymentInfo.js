@@ -8,7 +8,8 @@ import '../css/Order.css'
 
 export const EditableContext = React.createContext(false);
 
-const PaymentInfo = () => {
+const PaymentInfo = ({validPaymentInfo, setValidPaymentInfo}) => {
+
   const userState = useContext(UserContext);
 
   const [fullName, setFullName] = useState("");
@@ -18,8 +19,13 @@ const PaymentInfo = () => {
   const [cvv, setCvv] = useState("");
   const [billingAddress, setBillingAddress] = useState("");
 
-  const valid = fullName.valid && deliveryAddress.valid && cardNo.valid 
-  && expiryDate.valid && cvv.valid && billingAddress.valid;
+
+  let states = [fullName, deliveryAddress, cardNo, expiryDate, cvv, billingAddress];
+  useEffect(() => {
+    const valid = states.reduce((accumulator, item) => { return accumulator && item.valid }, true) 
+    const noneDefault = states.reduce((accumulator, item) => {return accumulator && item.data !== ""}, true)
+    setValidPaymentInfo(valid && noneDefault);
+  }, states)
   
   const [error, setError] = useState(false);
 
@@ -59,17 +65,19 @@ const PaymentInfo = () => {
             <PaymentInfoItem displayText="Expiry date" 
             state={expiryDate} 
             setState={setExpiryDate}
-            validate={new RegExp(/^[0-9]{2}\/[0-9]{2}$/)}/>
+            validate={new RegExp(/^[0-9]{2}\/[0-9]{2}$/)}
+            volatile={true}/>
             <PaymentInfoItem displayText="CVV" 
             state={cvv} 
             setState={setCvv}
-            validate={new RegExp(/^[0-9]{3}$/)}/>
+            validate={new RegExp(/^[0-9]{3}$/)}
+            volatile={true}/>
             <PaymentInfoItem displayText="Billing address" state={billingAddress} setState={setBillingAddress}/>
           </tbody></table>
           </EditableContext.Provider>
           <div className='flex justify-center'>
             <button onClick={() => {
-              if (valid) {
+              if (validPaymentInfo) {
                 setSubmitMarker(!submitMarker);
                 setError(false);
                 setDoc(doc(db,"users",userState.uid), {

@@ -1,0 +1,56 @@
+input{
+    border: solid 2px black;
+    font-family: Lexend;
+    outline: none;
+    width: 16rem;
+}
+textarea:focus, input:focus{
+    font-family: Lexend;
+}
+
+.textSignup {
+    font-family: Lexend;
+}
+
+.btnHover:hover{
+    background-color: #7DDEA9;
+}
+
+.i{
+
+    display: inline-flex;
+    width: 9vh;
+    animation: anim 2.5s ease-in-out infinite;
+    transform:  translateY(-420%) rotate(0deg);
+    margin-top: -500px;
+
+}
+.n1{
+    animation-delay: 0.1s;
+}
+.n2{
+    animation-delay: 1.2s;
+}
+.n3{
+    animation-delay: 2s;
+}
+.n4{
+    animation-delay: 1.4s;
+}
+.n5{
+    animation-delay: 2.4s;
+}
+.n6{
+    animation-delay: 0.6s;
+}
+@keyframes anim{
+    0%{
+        transform:  translateY(-100%) rotate(0deg);
+    }
+    100%{
+        transform: translateY(120vh) rotate(-360deg);
+    }
+}
+.nuggetRain{
+    z-index: 10;
+}
