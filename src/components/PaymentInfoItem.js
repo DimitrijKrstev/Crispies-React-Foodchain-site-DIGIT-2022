@@ -21,8 +21,8 @@ const PaymentInfoItem = (props) => {
         <th>
             {displayText}
         </th>
-        <td>
-            <input style={{color: state.valid ? 'black' : 'red'}} disabled={!isBeingEdited} onChange={(event) => {
+        <td className="pl-2 pt-1">
+            <input style={{color: state.valid ? 'black' : 'red'}} className="mx-1 bg-white" disabled={!isBeingEdited} onChange={(event) => {
                     setState({
                         data: event.target.value,
                         valid: validate.test(event.target.value)
@@ -31,7 +31,7 @@ const PaymentInfoItem = (props) => {
         </td>
         <td>
             {!isBeingEdited && 
-                <button onClick={() => {
+                <button className="bg-sea px-2 mt-1 border-2 border-offblack btnHover" onClick={() => {
                     if(volatile) setState({data: "", valid: false})
                     setEdited(true)
                 }}>Edit</button>

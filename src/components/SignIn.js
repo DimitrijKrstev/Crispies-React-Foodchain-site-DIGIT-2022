@@ -39,7 +39,7 @@ const SignIn = (props) => {
                     <Link to="/Sign-Up" onClick={() => props.changeClick(false)} className='flex flex-row justify-center textSignin btnHover py-2 border-t-2 border-offblack bg-sea'>Sign up</Link>
                 </div>}
             {!props.authot && state === "LogIn" &&
-                <div className='flex flex-col grow-0 w-full border-2 border-offblack'>
+                <div className='flex flex-col grow-0 w-full border-2 border-offblack bg-beigeLight'>
                     <div className="mx-auto mt-2 flex-col"><label className="textSignin flex">Email </label><input type="text" id="logInEmail" className="flex textSignin"></input></div>
                     <div className="mx-auto mt-1 mb-4 flex-col"><label className="textSignin flex">Password </label><input type="password" id="logInPassword" className="flex textSignin"></input></div>
                     <button className="textSignin btnHover border-t-2 border-offblack py-2 bg-sea" onClick={() => LogIn(document.getElementById("logInEmail").value,
