@@ -8,13 +8,13 @@
     color: #7DDEA9;
 }
 .buttonRow {
-    border-bottom: solid #171717 0.15rem;
-    border-top: solid #171717 0.15rem;
+    border-bottom: solid #171717 2px;
+    border-top: solid #171717 2px;
     display: inline-block;
 }
 
 .buttonBorder {
-    border-left: solid #171717 0.15rem;
+    border-left: solid #171717 2px;
 
 }
 #scroll-container{

@@ -5,32 +5,13 @@ import {ref, onValue, remove, set} from 'firebase/database'
 import { UserContext } from '../App'
 import { useState } from 'react'
 import {doc, getDoc} from 'firebase/firestore'
+import { CartContext } from '../App'
 import "../css/Cart.css"
 
-
-async function getFromFS(rawCartObj, setCart) {
-    const newCart = {};
-    for(let menuItemId in rawCartObj) {
-        const item = await getDoc(doc(db,"menuItems",menuItemId));
-        const cartEntry = item.data();
-        // console.log(cartEntry);
-        newCart[menuItemId] = {
-            name: cartEntry.name,
-            quantity: rawCartObj[menuItemId],
-            picture: cartEntry.picture,
-            priceEach: cartEntry.price
-        }
-        // console.log("New cart: ", newCart);
-    }
-    setCart(newCart);
-}
-
-const Cart = ({validPaymentInfo}) => {
+const Cart = ({setCartItemsNum, validPaymentInfo}) => {
 
     const currentUser = useContext(UserContext);
-    const cartRef = ref(rtdb, `users/${currentUser.uid}`);
-
-    const [cart, setCart] = useState({});
+    const cart = useContext(CartContext);
 
     const removeCartItem = (id) => {
         console.log(`removeCartItem(${id})`);
@@ -49,13 +30,6 @@ const Cart = ({validPaymentInfo}) => {
             set(ref(rtdb,`users/${currentUser.uid}`), {});
         }
     }
-
-    useEffect(() => {
-        onValue(cartRef, (snapshot) => {
-            const rawCartObj = snapshot.val();
-            getFromFS(rawCartObj,setCart);
-        })
-    }, [])
 
     console.log(cart);
 

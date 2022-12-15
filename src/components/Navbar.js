@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "../css/Navbar.css"
 import accPic from '../images/accJSX.svg';
 import cartPic from '../images/cart.svg';
 import SignIn from './SignIn';
 import { useState, useEffect, useRef } from 'react';
+import { UserContext, CartContext } from '../App';
 import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
+    const currentUser = useContext(UserContext);
+    const cart = useContext(CartContext);
+
     console.log(props.boxRef)
     const boxRef = useRef(null);
     const topButtonRef = useRef(null);
@@ -42,7 +46,11 @@ const Navbar = (props) => {
                         <img src={accPic} className="float-right w-10 pt-1 mx-3 justify-end"></img>
                     </button>
                     <Link to='/Order' className="buttonBorder bg-sea hover:bg-sealight">
-                        <img src={cartPic} className="float-right w-10 pt-1 mx-3 justify-end"></img>
+                        <div className='float-right relative'>
+                        <img src={cartPic} className="w-10 pt-1 mx-3 justify-end"></img>
+                        {currentUser && Object.keys(cart).length > 0 &&
+                        <div className='absolute top-1 left-1 bg-red-600 w-4 h-4 text-white text-xs rounded-full text-align-center flex flex-row align-center justify-center'>{Object.keys(cart).length }</div>}
+                        </div>
                     </Link>
                 </div>
             </div>
