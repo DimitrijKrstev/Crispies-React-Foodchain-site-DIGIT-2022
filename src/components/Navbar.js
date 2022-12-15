@@ -36,7 +36,7 @@ const Navbar = (props) => {
                     <Link to="/Find-Us" className="bg-sea hover:bg-sealight font-bold py-2 px-2 border-r-2
                     border-offblack text-center flex items-center text-offblack shrink-0 itemNav">Find Us</Link>
                     <div className="flex-auto whitespace-nowrap text-offblack bg-terra" id="scroll-container">
-                        <div id="scroll-text" className="text-2xl mt-1">Crispy Chicken Burger • Chicken Wrap • Sexy Burger</div>
+                        <div id="scroll-text" className="text-2xl mt-1">For 15% off on all menu items use coupon XMAS15 on checkout at any of our locations during the period of 20.12.2022 till 28.12.2022</div>
                     </div>
                     <div className="flex flex-row shrink-0">
                         <button className="buttonBorder bg-sea hover:bg-sealight" onClick={() => props.changeClick(!props.clicked)} ref={topButtonRef}>

@@ -6,15 +6,25 @@ import { db, rtdb } from '../index';
 import '../css/MenuPage.css'
 import MenuCard from './MenuCard';
 
+import burgerImg from '../images/Burger.svg'
+import combosImg from '../images/Combos.svg'
+import snacksImg from '../images/Snacks.svg'
+import drinksImg from '../images/Drinks.svg'
+import friesImg from '../images/Fries.svg'
+import saucesImg from '../images/sauces.svg'
 const Icon = (props) => {
   let icon;
   switch (props.type) {
-    case 'Burgers': icon = 'https://cdn-icons-png.flaticon.com/512/1161/1161695.png'; break;
-    case 'Snacks': icon = 'https://cdn-icons-png.flaticon.com/512/5793/5793750.png'; break;
+    case 'Burgers': icon = burgerImg; break;
+    case 'Combos': icon = combosImg; break;
+    case 'Snacks': icon = snacksImg; break;
+    case 'Drinks': icon = drinksImg; break;
+    case 'Sauces': icon = saucesImg; break;
+    case 'Fries': icon = friesImg; break;
     default: icon = 'https://cdn-icons-png.flaticon.com/512/1161/1161695.png'
   }
   return (
-    <a href={"#" + props.type}className='border-2 border-black w-20 h-20 m-2' title={props.type}>
+    <a href={"#" + props.type}className='border-l-2 border-y-2 border-offblack pt-2 px-2 border-black max-w-[90px] w-[16vw]  mt-2 bg-sea mb-2 borderLast btnHover shrink-1' title={props.type}>
       <img src={icon}></img>
     </a>
   )
@@ -57,7 +67,7 @@ const MenuPage = (props) => {
     return (
       filtered.length > 0 && <div id={props2.id}>
         <h1 className='text-center textSignin text-3xl my-8'>{props2.title}</h1>
-        <div className='flex justify-center flex-wrap'>
+        <div className='flex justify-center flex-wrap mx-auto'>
           {filtered.map((item) => (<MenuCard item={item} authot={props.authot} addCart={addCart} changeClick={props.changeClick}
             setNotifCount={setNotifCount}></MenuCard>))}
         </div>
@@ -80,12 +90,13 @@ const MenuPage = (props) => {
       </div>
 
       <div className='flex flex-col items-center'>
-        <div className='mt-2 flex justify-center flex-wrap'>
+        <div className='mt-2 flex justify-center'>
           <Icon type={'Combos'}></Icon><Icon type={'Burgers'}></Icon><Icon type={'Snacks'}></Icon><Icon type={'Fries'}></Icon>
           <Icon type={'Drinks'}></Icon><Icon type={'Sauces'}></Icon>
         </div>
-        <input className='w-[65%] text-center border-2 border-offblack' type="text" placeholder='Search...' onChange={Searching}></input>
-        <div className='mt-5 mb-5  border-black flex flex-col w-full items-center flex-wrap w-9/12'>
+
+        <div className='mt-5 mb-5 mx-auto border-black flex flex-col w-full items-center flex-wrap max-w-[1150px] bg-beigeLight border-2 border-offblack'>
+          <input className='text-center text-offblack bg-beige border-0 border-b-2 border-offblack w-full textSignin py-3' type="text" placeholder='Search...' onChange={Searching}></input>
           {!ready &&
             <div className='w-full h-[40rem] flex items-center justify-center bg-beige text-offblack text-4xl textSignin'>
               Loading..

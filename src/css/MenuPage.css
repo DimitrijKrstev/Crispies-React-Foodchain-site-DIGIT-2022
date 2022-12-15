@@ -31,3 +31,7 @@
 .btnHoverCart:hover{
     background-color: rgb(54, 54, 54);
 }
+
+.borderLast:last-of-type {
+    border-right: solid #171717 2px;
+}
