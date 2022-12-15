@@ -33,8 +33,8 @@ const FindUs = () => {
           />
         )}
       </div>
-      <div id="map">
-        <img className="mx-auto border-2 border-offblack" src={mapOpened} />
+      <div id="map" className='w-full'>
+        <img src={mapOpened} />
       </div>
     </div>
   )
