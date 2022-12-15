@@ -1,9 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { rtdb } from '../index'
 import { ref, remove, set } from 'firebase/database'
 import { UserContext } from '../App'
 import { CartContext } from '../App'
 import Notification from './Notification'
+import { showNotif } from './Notification'
 import "../css/Cart.css"
 
 const Cart = ({ validPaymentInfo }) => {
@@ -21,20 +22,24 @@ const Cart = ({ validPaymentInfo }) => {
             return accumulator + (cart[item].quantity * cart[item].priceEach)
         }, 0)
     }
+
+    const [notifObj, setNotifObj] = useState({text: "",timestamp: 0});
+
     const processOrder = () => {
         if (validPaymentInfo) {
-            alert(`Purchase for ${totalCost()} has gone through`)
+            showNotif(`Purchase for ${totalCost()} has gone through`, setNotifObj)
             set(ref(rtdb, `users/${currentUser.uid}`), {});
         }
         else {
-
+            showNotif("Complete your purchase information before proceeding.", setNotifObj)
         }
     }
 
     return (
-        (Object.keys(cart).length !== 0) && 
+        <div>
+            <Notification input={notifObj}></Notification>
+            {Object.keys(cart).length !== 0 && 
             <div className='Cart bg-terra'>
-                <Notification text="text" isShown={true}></Notification>
                 {Object.keys(cart).map((item) => (
                     <div className="CartItem flex flex-row justify-start w-full align-center" key={item}>
                         <img src={cart[item].picture} />
@@ -53,6 +58,8 @@ const Cart = ({ validPaymentInfo }) => {
                     <button className='bg-sea border-t-2 border-offblack p-1 w-full font-bold btnHover' onClick={processOrder}>Checkout</button>
                 </div>
             </div>
+            }
+    </div>
     )
 }
 
