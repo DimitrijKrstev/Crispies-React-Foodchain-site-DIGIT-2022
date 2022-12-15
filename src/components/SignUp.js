@@ -45,9 +45,9 @@ const SignUp = () => {
             <div className='flex justify-center'>
                 <div className='flex mt-16 border-2 border-offblack bg-beige' style={{zIndex: 1}}>
                     <div className='flex flex-col grow-0 w-full'>
-                        <label className="textSignup w-full mt-5 mx-10">Email</label><input type="text" id="emailInput" className="textSignup mx-10"></input>
-                        <label className="textSignup mx-10">Username</label><input type="text" id="usernameInput" className="textSignup mx-10"></input>
-                        <label className="textSignup mx-10">Password</label><input type="password" id="passwordInput" className="textSignup mx-10"></input>
+                        <label className="textSignup w-full mt-5 mx-10">Email</label><input type="text" id="emailInput" className="textSignup mx-10 p-0"></input>
+                        <label className="textSignup mx-10">Username</label><input type="text" id="usernameInput" className="textSignup mx-10 p-0"></input>
+                        <label className="textSignup mx-10">Password</label><input type="password" id="passwordInput" className="textSignup mx-10 p-0"></input>
                         <button className="btnHover textSignup mt-6 border-t-2 border-offblack py-2 bg-sea" onClick={() => SignUpfunc(document.getElementById("emailInput").value, document.getElementById("usernameInput").value,
                             document.getElementById("passwordInput").value)}>Sign Up</button>
                         <p id="errorP" className='text-center bg-offblack text-terra flex-row textSignin'></p>
