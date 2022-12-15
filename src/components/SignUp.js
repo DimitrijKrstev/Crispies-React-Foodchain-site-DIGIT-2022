@@ -41,6 +41,8 @@ const SignUp = () => {
                 <img src={nugget} alt="nugget" className="i n4 nuggetRain"></img>
                 <img src={nugget} alt="nugget" className="i n5 nuggetRain"></img>
                 <img src={nugget} alt="nugget" className="i n6 nuggetRain"></img>
+                <img src={nugget} alt="nugget" className="i n7 nuggetRain"></img>
+                <img src={nugget} alt="nugget" className="i n8 nuggetRain"></img>
             </div>
             <div className='flex justify-center'>
                 <div className='flex mt-16 border-2 border-offblack bg-beige' style={{zIndex: 1}}>
