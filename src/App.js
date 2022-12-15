@@ -64,7 +64,7 @@ function App() {
             <Route exact path="/Find-Us" element={<FindUs></FindUs>}></Route>
             <Route exact path="/Order" element={userState ?
               <Order></Order> :
-              <Navigate to="/"></Navigate>}></Route>
+              <Navigate to="/Sign-Up"></Navigate>}></Route>
             <Route exact path="/Menu" element={
               <MenuPage authot={userState} changeClick={changeClick}></MenuPage>}>
             </Route>

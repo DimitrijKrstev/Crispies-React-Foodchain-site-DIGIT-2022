@@ -1,5 +1,5 @@
 import React from 'react';
-import { auth, db } from '../index';
+import { auth } from '../index';
 import { useState } from 'react';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from 'react-router-dom';
@@ -21,9 +21,13 @@ async function LogIn(email, password) {
 
 const SignIn = (props) => {
     const [state, changeState] = useState("initial")
-
+    function logIn(){
+        changeState("LogIn")
+        props.changeClick(true);
+    }
     return (
-        <div className='flex flex-col bg-beige' id="SignContainer" style={{ position: 'relative', zIndex: '30'}}>
+        <div className='flex flex-col bg-beige' id="SignContainer" style={{ position: 'relative', zIndex: '30'}} ref={props.boxRef}>
+            <p>TEST</p>
             {props.authot &&
                 <div className='flex flex-col grow-0 border-2 border-offblack text-center'>
                     <p className="py-2 textSignin bg-beigeLight text-offblack">Logged in as: {props.authot.displayName}</p>
