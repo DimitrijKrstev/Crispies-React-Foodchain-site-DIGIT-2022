@@ -1,23 +1,33 @@
 .Cart {
     margin: auto;
-    max-width: 600px;
+    max-width: 650px;
     border: 20px;
-    padding: 2px;
     margin-top: 20px;
-    border: 0.15rem solid black;
+    border: 2px solid black;
 }
 .Cart img {
     height: 75px;
+    padding: 0;
+    border-right: 2px solid black;
 }
 .CartItem {
-    max-width: 600px;
+    max-width: 650px;
     margin:auto;
+    border-bottom: solid 2px black;
 }
 .CartItem>* {
     padding: 0 10px;
 }
-.Cart button {
-    background: seagreen;
+.Cart .button {
     padding: 5px 15px;
-    border: 0.15rem solid black;  
+    border-left: 2px solid black;  
+}
+body{
+    background: repeating-linear-gradient(
+        45deg,
+  #606dbc,
+  #606dbc 20px,
+  #465298 20px,
+  #465298 30px
+      );;
 }

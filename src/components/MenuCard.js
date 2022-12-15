@@ -21,7 +21,7 @@ const MenuCard = (props) => {
     }
     return (
         <div className='flex flex-col border-2 border-black m-2 items-stretch'>
-            <img src={props.item.picture} className='h-40 w-40'></img>
+            <img src={props.item.picture} className='h-40 w-40' alt="item picture"></img>
             <p className='text-center'>{props.item.name}</p>
             <p className='text-center'>Price: {props.item.price}</p>
             <div className={'flex flex-row self-stretch' + (!props.authot ? " disabled" : '')}>

@@ -13,17 +13,12 @@ import { rtdb } from './index';
 import { ref, onValue } from 'firebase/database';
 
 export const UserContext = React.createContext(null);
-
 export const CartContext = React.createContext({});
 
 function App() {
   //currentUser kako state
   const [userState, setUserState] = useState({uid: null});
   const [rtdbSubscription, setRtdbSubscription] = useState({unsub: () => {}});
-
-  useEffect(() => {
-    console.log(rtdbSubscription);
-  }, [rtdbSubscription])
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {

@@ -1,9 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { collection, query, getDocs, updateDoc } from 'firebase/firestore';
+import { collection, query, getDocs } from 'firebase/firestore';
 import { ref, set, get, child, getDatabase } from "firebase/database";
-import { auth, db, rtdb } from '../index';
-import { Link } from 'react-router-dom';
+import { db, rtdb } from '../index';
 import '../css/MenuPage.css'
 import MenuCard from './MenuCard';
 
@@ -67,7 +66,7 @@ const MenuPage = (props) => {
   }
 
   function Searching(e) {
-    setItems(fullItems.filter(item => item.name.includes(e.target.value)));
+    setItems(fullItems.filter(item => item.name.toUpperCase().includes(e.target.value.toUpperCase())));
   }
 
   return (

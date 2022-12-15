@@ -1,7 +1,7 @@
 import {React, useEffect, useState} from 'react'
 import FindUsCard from './FindUsCard'
 import { db } from '../index'
-import { collection, getDocs, doc } from '@firebase/firestore'
+import { collection, getDocs } from '@firebase/firestore'
 import "../css/FindUs.css"
 
 const FindUs = () => {
@@ -9,7 +9,6 @@ const FindUs = () => {
   const [mapOpened, setMapOpened] = useState('default');
   
   useEffect(() => {
-      console.log("RENDERED");
       let processedData = [];
       const docRef = collection(db,"restaurants");
       getDocs(docRef).then((data) => {
@@ -34,7 +33,7 @@ const FindUs = () => {
         )}
       </div>
       <div id="map" className='w-full'>
-        <img src={mapOpened} />
+        <img src={mapOpened} alt="map"/>
       </div>
     </div>
   )
