@@ -3,13 +3,30 @@ import "../css/Navbar.css"
 import accPic from '../images/accJSX.svg';
 import cartPic from '../images/cart.svg';
 import SignIn from './SignIn';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
+    console.log(props.boxRef)
+    const boxRef = useRef(null);
+    const topButtonRef = useRef(null);
+
+    useEffect(() => {
+        console.log(boxRef);
+        function handleOutsideClick(event) {
+            console.log("TEST");
+            if (event.target !== undefined && boxRef.current && !boxRef.current.contains(event.target) && (topButtonRef.current && !topButtonRef.current.contains(event.target))) {
+                console.log("TEST2")
+                props.changeClick(true);
+            }
+        }
+        document.addEventListener("click", handleOutsideClick);
+        return () => document.removeEventListener("click", handleOutsideClick);
+    },[boxRef]);
+
     return (
         <div>
-            <div style={{backgroundColor: "#ffe1bd"}} className="flex justify-center">
+            <div style={{ backgroundColor: "#ffe1bd" }} className="flex justify-center">
                 <Link to="/" className="text-8xl text-center mp-4" id="logoH1">CRISPIES</Link>
             </div>
             <div className="border-t-2 border-b-2 border-offblack flex flex-row justify-between h-12">
@@ -21,7 +38,7 @@ const Navbar = (props) => {
                     <div id="scroll-text" className="text-2xl mt-1">Crispy Chicken Burger • Chicken Wrap • Sexy Burger</div>
                 </div>
                 <div className="flex flex-row shrink-0">
-                    <button className="buttonBorder bg-sea hover:bg-sealight" onClick={() => props.changeClick(!props.clicked)}>
+                    <button className="buttonBorder bg-sea hover:bg-sealight" onClick={() => props.changeClick(!props.clicked)} ref={topButtonRef}>
                         <img src={accPic} className="float-right w-10 pt-1 mx-3 justify-end"></img>
                     </button>
                     <Link to='/Order' className="buttonBorder bg-sea hover:bg-sealight">
@@ -31,7 +48,7 @@ const Navbar = (props) => {
             </div>
             {props.clicked &&
                 <div id="userDiv">
-                    <SignIn authot={props.authot} changeAuth={props.changeAuth} changeClick={props.changeClick}></SignIn>
+                    <SignIn authot={props.authot} changeAuth={props.changeAuth} changeClick={props.changeClick} boxRef={boxRef}></SignIn>
                 </div>}
         </div>
     )

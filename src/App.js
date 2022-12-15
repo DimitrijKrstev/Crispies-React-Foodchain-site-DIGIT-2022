@@ -7,7 +7,7 @@ import NotFound from './components/NotFound.js';
 import Navbar from "./components/Navbar";
 import SignUp from './components/SignUp.js';
 import { auth } from './index';
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState, useRef} from 'react';
 
 export const UserContext = React.createContext(null);
 function App() {
@@ -29,7 +29,7 @@ function App() {
           <Route exact path="/Find-Us" element={<FindUs></FindUs>}></Route>
           <Route exact path="/Order" element={userState ?
             <Order></Order> :
-            <Navigate to="/"></Navigate>}></Route>
+            <Navigate to="/Sign-Up"></Navigate>}></Route>
           <Route exact path="/Menu" element={<MenuPage authot={userState} changeClick={changeClick}></MenuPage>}></Route>
           <Route exact path="/Sign-Up" element={!userState ?
             <SignUp authot={userState}></SignUp> :
