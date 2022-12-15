@@ -22,12 +22,11 @@
     padding: 5px 15px;
     border-left: 2px solid black;  
 }
-body{
-    background: repeating-linear-gradient(
-        45deg,
-  #606dbc,
-  #606dbc 20px,
-  #465298 20px,
-  #465298 30px
-      );;
+body {
+    background-color: #FFF;
+    background-size: 180px 180px;
+    background-position: 0 0, 270px 270px;
+    background-image: linear-gradient(45deg, #e0d5c6 25%, transparent 25%, transparent 75%, #e0d5c6 75%, #e0d5c6),
+    linear-gradient(45deg, #e0d5c6 25%, transparent 25%, transparent 75%, #e0d5c6 75%, #e0d5c6);
+
 }
