@@ -18,8 +18,16 @@
 
 #notif { 
     text-align: center;
-    border: solid #171717 0.15rem;
-    background-color: rgb(60 179 113);
+    border: solid #171717 2px;
+    font-family: Lexend;
     width: 180px;
     margin: 5px;
+}
+
+.btnHoverRed:hover{
+    background-color: rgb(252, 207, 201);
+}
+
+.btnHoverCart:hover{
+    background-color: rgb(54, 54, 54);
 }

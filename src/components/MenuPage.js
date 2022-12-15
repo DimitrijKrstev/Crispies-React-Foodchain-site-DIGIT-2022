@@ -56,7 +56,7 @@ const MenuPage = (props) => {
     if (props2.itemCards) filtered = props2.itemCards.filter((item) => item.type === props2.title);
     return (
       filtered.length > 0 && <div id={props2.id}>
-        <h1 className='text-center'>{props2.title}</h1>
+        <h1 className='text-center textSignin text-3xl my-8'>{props2.title}</h1>
         <div className='flex justify-center flex-wrap'>
           {filtered.map((item) => (<MenuCard item={item} authot={props.authot} addCart={addCart} changeClick={props.changeClick}
             setNotifCount={setNotifCount}></MenuCard>))}
@@ -71,20 +71,23 @@ const MenuPage = (props) => {
 
   return (
     <div>
-      <div className='fixed top-0 z-10'>
+
+      <h1 className=" border-b-2 border-offblack text-4xl text-center bg-beige titleLocations py-3">Menu</h1>
+      <div className='fixed right-0 top-5 z-10'>
         <div id="notif" className='hide'>
-          <p>Successfully added {notifCount} items to the cart.</p>
+          <p className="bg-terra text-offblack p-3">Successfully added {notifCount} items to the cart.</p>
         </div>
       </div>
+
       <div className='flex flex-col items-center'>
-        <div className='mt-10 flex justify-center flex-wrap'>
+        <div className='mt-2 flex justify-center flex-wrap'>
           <Icon type={'Combos'}></Icon><Icon type={'Burgers'}></Icon><Icon type={'Snacks'}></Icon><Icon type={'Fries'}></Icon>
           <Icon type={'Drinks'}></Icon><Icon type={'Sauces'}></Icon>
         </div>
-        <input className='w-[65%] text-center' type="text" placeholder='Search...' onChange={Searching}></input>
-        <div className='mt-5 mb-5 border-2 border-black flex flex-col w-[70%] items-center flex-wrap'>
+        <input className='w-[65%] text-center border-2 border-offblack' type="text" placeholder='Search...' onChange={Searching}></input>
+        <div className='mt-5 mb-5  border-black flex flex-col w-full items-center flex-wrap w-9/12'>
           {!ready &&
-            <div className='w-full h-[40rem] flex items-center justify-center bg-gray-300'>
+            <div className='w-full h-[40rem] flex items-center justify-center bg-beige text-offblack text-4xl textSignin'>
               Loading..
             </div>}
           <Section title={"Combos"} itemCards={items} id="Combos"></Section>

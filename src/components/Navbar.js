@@ -43,9 +43,9 @@ const Navbar = (props) => {
                     </button>
                     <Link to='/Order' className="buttonBorder bg-sea hover:bg-sealight">
                         <div className='float-right relative'>
-                            <img src={cartPic} className="w-10 pt-1 mx-3 justify-end"></img>
-                            {currentUser && Object.keys(cart).length > 0 &&
-                                <div className='absolute top-1 left-1 bg-red-600 w-4 h-4 text-white text-xs rounded-full text-align-center flex flex-row align-center justify-center'>{Object.keys(cart).length}</div>}
+                        <img src={cartPic} className="w-10 pt-1 mx-3 justify-end"></img>
+                        {currentUser && Object.keys(cart).length > 0 &&
+                        <div className='absolute top-0 left-0 bg-terra w-4 h-4 text-offblack border-2 border-t-0 border-l-0 border-offblack text-xs text-align-center flex flex-row align-center justify-center textSignin'>{Object.keys(cart).length}</div>}
                         </div>
                     </Link>
                 </div>
