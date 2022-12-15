@@ -35,12 +35,12 @@ const SignUp = () => {
     return (
         <div style={{overflow: 'hidden', height: '85vh'}}>
             <div className="mx-auto max-w-max z-0">
-                <img src={nugget} className="i n1 nuggetRain"></img>
-                <img src={nugget} className="i n2 nuggetRain"></img>
-                <img src={nugget} className="i n3 nuggetRain"></img>
-                <img src={nugget} className="i n4 nuggetRain"></img>
-                <img src={nugget} className="i n5 nuggetRain"></img>
-                <img src={nugget} className="i n6 nuggetRain"></img>
+                <img src={nugget} alt="nugget" className="i n1 nuggetRain"></img>
+                <img src={nugget} alt="nugget" className="i n2 nuggetRain"></img>
+                <img src={nugget} alt="nugget" className="i n3 nuggetRain"></img>
+                <img src={nugget} alt="nugget" className="i n4 nuggetRain"></img>
+                <img src={nugget} alt="nugget" className="i n5 nuggetRain"></img>
+                <img src={nugget} alt="nugget" className="i n6 nuggetRain"></img>
             </div>
             <div className='flex justify-center'>
                 <div className='flex mt-16 border-2 border-offblack bg-beige' style={{zIndex: 1}}>

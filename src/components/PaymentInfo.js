@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../App';
 import PaymentInfoItem from './PaymentInfoItem';
 import {doc, setDoc} from '@firebase/firestore'
-import {db, rtdb} from '../index'
+import {db} from '../index'
 import '../css/Order.css'
 
 export const EditableContext = React.createContext(false);
@@ -25,7 +25,7 @@ const PaymentInfo = ({validPaymentInfo, setValidPaymentInfo}) => {
     const valid = states.reduce((accumulator, item) => { return accumulator && item.valid }, true) 
     const noneDefault = states.reduce((accumulator, item) => {return accumulator && item.data !== ""}, true)
     setValidPaymentInfo(valid && noneDefault);
-  }, states)
+  }, [...states])
   
   const [error, setError] = useState(false);
 
@@ -41,16 +41,16 @@ const PaymentInfo = ({validPaymentInfo, setValidPaymentInfo}) => {
     })
   },[userState])
 
-  const [submitMarker, setSubmitMarker] = useState(false);
+  const [editable, setEditable] = useState(false);
 
   return (
     <div className="PaymentInfo">
       <h1 className=" border-b-2 border-offblack text-4xl text-center bg-beige titleLocations py-3">Ready to Order?</h1>
       {userState &&
-        <div className='purchaseInformation flex flex-col w-fit mx-auto border-x-2 border-offblack bg-beige mt-8 textSignin'>
+        <div className='purchaseInformation flex flex-col max-w-fit mx-auto border-x-2 border-offblack bg-beige mt-8 textSignin'>
           <p className="p-2 textSignup text-center mb-2 bg-offblack w-full text-beige">Please confirm/complete your details below:</p>
-          <EditableContext.Provider value={submitMarker}>
-          <table className="mx-10"><tbody>
+          <EditableContext.Provider value={editable}>
+          <div className="mx-4 sm:mx-10">
             <PaymentInfoItem displayText="Full name" 
             state={fullName} 
             setState={setFullName} 
@@ -73,12 +73,13 @@ const PaymentInfo = ({validPaymentInfo, setValidPaymentInfo}) => {
             validate={new RegExp(/^[0-9]{3}$/)}
             volatile={true}/>
             <PaymentInfoItem displayText="Billing address" state={billingAddress} setState={setBillingAddress}/>
-          </tbody></table>
+          </div>
           </EditableContext.Provider>
           <div className='flex justify-center flex-col'>
+            {editable ?
             <button className="w-full text-2xl border-y-2 border-offblack text-offblack mt-4 btnHover textSignup bg-sea" onClick={() => {
               if (validPaymentInfo) {
-                setSubmitMarker(!submitMarker);
+                setEditable(false);
                 setError(false);
                 setDoc(doc(db,"users",userState.uid), {
                   fullName: fullName.data,
@@ -90,7 +91,10 @@ const PaymentInfo = ({validPaymentInfo, setValidPaymentInfo}) => {
                 })
               }
               else setError(true);
-            }}>Set</button>
+            }}>Submit</button>:
+            <button className='w-full text-2xl border-y-2 border-offblack text-beige bg-offblack mt-4 editBtnHover textSignup bg-sea' onClick={() => {
+              setEditable(true);
+            }}>Edit</button>}
             {error &&
               <div className="bg-offblack textSignin text-terra text-center w-full">Invalid data entered</div>
             }
