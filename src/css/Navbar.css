@@ -3,9 +3,23 @@
     color: mediumseagreen;
     text-shadow: 0.15rem 0 0 #171717, 0 -1px 0 #171717, 0 1px 0 #171717, -1px 0 0 #171717;
 }
+.Navbar {
+    width: 100%;
+    position: fixed;
+}
+.phantomNavbar {
+    height: 144px;
+}
 @media (max-width: 600px) {
     #logoH1 {
         font-size: 5rem;
+    }
+    .Navbar {
+        position: fixed;
+        width: 100vw;
+    }
+    .phantomNavbar {
+        height: 128px;
     }
 }
 #logoH1:hover{

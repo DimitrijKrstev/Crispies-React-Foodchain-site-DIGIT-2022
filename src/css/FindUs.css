@@ -5,12 +5,6 @@
 /*    background: rgb(255,225,189);
     background: linear-gradient(180deg, rgba(255,225,189,1) 0%, rgb(255, 241, 219) 100%, rgb(248, 230, 207) 100%);*/
 }
-@media (min-width: 769px) {
-    .FindUs {
-        max-height: calc(100vh - 146px);
-        overflow: hidden;
-    }
-}
 #map {
     margin: auto;
     overflow: hidden;

@@ -3,6 +3,7 @@ import { rtdb } from '../index'
 import { ref, remove, set } from 'firebase/database'
 import { UserContext } from '../App'
 import { CartContext } from '../App'
+import Notification from './Notification'
 import "../css/Cart.css"
 
 const Cart = ({ validPaymentInfo }) => {
@@ -25,11 +26,15 @@ const Cart = ({ validPaymentInfo }) => {
             alert(`Purchase for ${totalCost()} has gone through`)
             set(ref(rtdb, `users/${currentUser.uid}`), {});
         }
+        else {
+
+        }
     }
 
     return (
         (Object.keys(cart).length !== 0) && 
             <div className='Cart bg-terra'>
+                <Notification text="text" isShown={true}></Notification>
                 {Object.keys(cart).map((item) => (
                     <div className="CartItem flex flex-row justify-start w-full align-center" key={item}>
                         <img src={cart[item].picture} />

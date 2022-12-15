@@ -34,7 +34,7 @@ const SignUp = () => {
     const [errorState, setErrorState] = useState("");
 
     return (
-        <div style={{ overflow: 'hidden', height: '85vh' }}>
+        <div className="minusNavbar" style={{ overflow: 'hidden' }}>
             <div className="mx-auto max-w-max z-0">
                 <img src={nugget} alt="nugget" className="i n1 nuggetRain"></img>
                 <img src={nugget} alt="nugget" className="i n2 nuggetRain"></img>
