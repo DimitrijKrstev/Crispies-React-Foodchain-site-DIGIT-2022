@@ -30,7 +30,7 @@ const PaymentInfo = ({validPaymentInfo, setValidPaymentInfo}) => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    onSnapshot(doc(db,"users",userState.uid), doc => {
+    userState.uid && onSnapshot(doc(db,"users",userState.uid), doc => {
       let data = doc.data();
       setFullName({data: data.fullName, valid:true})
       setDeliveryAddress({data: data.deliveryAddress, valid:true});
@@ -39,7 +39,7 @@ const PaymentInfo = ({validPaymentInfo, setValidPaymentInfo}) => {
       setCvv({data: data.cvv, valid: true});
       setBillingAddress({data: data.billingAddress, valid: true});
     })
-  },[])
+  },[userState])
 
   const [submitMarker, setSubmitMarker] = useState(false);
 
