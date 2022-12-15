@@ -11,3 +11,6 @@
     src: local("Lexend"),
     url("/src/fonts/LexendDeca-VariableFont_wght.ttf") format("truetype");
 }
+html{
+    scroll-behavior: smooth;
+}

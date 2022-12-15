@@ -7,7 +7,7 @@ import NotFound from './components/NotFound.js';
 import Navbar from "./components/Navbar";
 import SignUp from './components/SignUp.js';
 import { auth } from './index';
-import React, { useEffect, useState, useRef} from 'react';
+import React, { useEffect, useState } from 'react';
 
 export const UserContext = React.createContext(null);
 function App() {
