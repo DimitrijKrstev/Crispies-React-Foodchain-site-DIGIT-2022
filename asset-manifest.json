@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Crispies-React-Foodchain-site-DIGIT-2022/static/css/main.0c33623f.css",
-    "main.js": "/Crispies-React-Foodchain-site-DIGIT-2022/static/js/main.10b2cc91.js",
+    "main.js": "/Crispies-React-Foodchain-site-DIGIT-2022/static/js/main.1b0a1fc1.js",
     "static/media/LexendDeca-VariableFont_wght.ttf": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/LexendDeca-VariableFont_wght.85a26ab7491852266e9b.ttf",
     "static/media/Carousel1.jpg": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/Carousel1.33376a239083818d5bce.jpg",
     "static/media/Carousel2.jpg": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/Carousel2.a9f5e9166d69b4d372ce.jpg",
@@ -18,10 +18,10 @@
     "static/media/sauces2.svg": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/sauces2.b8e3e1807b267f8e29311a878aaf527e.svg",
     "static/media/accJSX.svg": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/accJSX.e407f0df56eeb15d3a932c90fbd11deb.svg",
     "main.0c33623f.css.map": "/Crispies-React-Foodchain-site-DIGIT-2022/static/css/main.0c33623f.css.map",
-    "main.10b2cc91.js.map": "/Crispies-React-Foodchain-site-DIGIT-2022/static/js/main.10b2cc91.js.map"
+    "main.1b0a1fc1.js.map": "/Crispies-React-Foodchain-site-DIGIT-2022/static/js/main.1b0a1fc1.js.map"
   },
   "entrypoints": [
     "static/css/main.0c33623f.css",
-    "static/js/main.10b2cc91.js"
+    "static/js/main.1b0a1fc1.js"
   ]
 }
