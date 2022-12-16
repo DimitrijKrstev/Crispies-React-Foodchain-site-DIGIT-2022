@@ -91,17 +91,23 @@ const MenuPage = (props) => {
       <h1 className=" border-b-2 border-offblack text-4xl text-center bg-beige titleLocations py-3">Menu</h1>
 
       <div className='flex flex-col items-center'>
-        <div className='mt-2 flex justify-center'>
+        <div className='mt-4 flex justify-center'>
           <Icon type={'Combos'}></Icon><Icon type={'Burgers'}></Icon><Icon type={'Snacks'}></Icon><Icon type={'Fries'}></Icon>
           <Icon type={'Drinks'}></Icon><Icon type={'Sauces'}></Icon>
         </div>
 
         <div className='mt-5 mb-5 mx-auto border-black flex flex-col w-full items-center flex-wrap max-w-[1150px] bg-beigeLight border-2 border-offblack'>
-          <input className='text-center text-offblack bg-beige border-0 border-b-2 border-offblack w-full textSignin py-3' type="text" placeholder='Search...' onChange={Searching}></input>
+          <input className='text-center text-offblack bg-sea border-0 border-b-2 border-offblack w-full textSignin py-3 text-2xl placeholder-offgray' type="text" placeholder='Search...' onChange={Searching}></input>
           {!ready &&
-            <div className='w-full h-[40rem] flex items-center justify-center bg-beige text-offblack text-4xl textSignin'>
-              Loading..
-            </div>}
+          <div className="mx-auto flex flex-col border-2 border-offblack max-w-[500px] mt-16 mb-10">
+            <div className="flex justify-between bg-beige">
+              <h1 className="textSignin text-offblack text-3xl ml-3">Loading</h1>
+              <button className="textSignin bg-terra text-offblack p-2 px-4 border-l-2 border-offblack">...</button>
+            </div>
+            <div className="flex flex-col bg-beigeLight border-t-2 border-offblack text-center border-b-8 py-16">
+              <h1 className="textSignin text-6xl px-4">Wrapping up...</h1>
+            </div>
+          </div>}
           <Section title={"Combos"} itemCards={items} id="Combos"></Section>
           <Section title={"Burgers"} itemCards={items} id="Burgers"></Section>
           <Section title={"Snacks"} itemCards={items} id="Snacks"></Section>

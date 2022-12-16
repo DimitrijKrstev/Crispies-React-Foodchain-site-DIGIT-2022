@@ -5,13 +5,20 @@
       </div> */
 .Notification {
     position: fixed;
-    right: 10px;
-    top: 1.25rem;
+    right: 48px;
+    top: 1.35rem;
     z-index: 10;
     background: rgb(253 158 144);
     padding: 0.75rem;
     border: solid #171717 2px;
-    max-width: 300px;
+    border-left: solid #171717 2px;
+    border-top: solid #171717 2px;
+    width: 300px;
+    height: 76px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .Notification > * { 
     text-align: center;
@@ -22,5 +29,5 @@
 }
 .Notification.transitioning {
     opacity: 0;
-    transition: opacity 1.5s linear;
+    transition: opacity 1s linear;
 }
