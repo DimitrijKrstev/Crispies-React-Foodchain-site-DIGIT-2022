@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.f5153646.css",
-    "main.js": "/static/js/main.283e66da.js",
-    "static/media/LexendDeca-VariableFont_wght.ttf": "/static/media/LexendDeca-VariableFont_wght.85a26ab7491852266e9b.ttf",
-    "static/media/Carousel1.jpg": "/static/media/Carousel1.33376a239083818d5bce.jpg",
-    "static/media/Carousel2.jpg": "/static/media/Carousel2.a9f5e9166d69b4d372ce.jpg",
-    "static/media/nugget.png": "/static/media/nugget.84e7f699e847d35507a7.png",
-    "static/media/FredokaOne-Regular.ttf": "/static/media/FredokaOne-Regular.4aea26dd6637dfac0fac.ttf",
-    "static/media/pagination.less": "/static/media/pagination.452bab8aa1444b21387f.less",
-    "static/media/Snacks2.svg": "/static/media/Snacks2.8fe76fe1a578abe3d08341f61738277a.svg",
-    "static/media/Fries2.svg": "/static/media/Fries2.9575ecf1fe00086c26ade722d1acb2c2.svg",
-    "static/media/Burger2.svg": "/static/media/Burger2.6454f108d45955a12c0a155a960a583d.svg",
-    "static/media/Combos2.svg": "/static/media/Combos2.010c931e2c2a1db5ec5c907a3c7ab189.svg",
-    "static/media/cart.svg": "/static/media/cart.232bfecf512459d269560f7908e458d7.svg",
-    "static/media/Drinks2.svg": "/static/media/Drinks2.efbc1bcbdf0403584b358b4a1df31a08.svg",
-    "static/media/sauces2.svg": "/static/media/sauces2.b8e3e1807b267f8e29311a878aaf527e.svg",
-    "index.html": "/index.html",
-    "static/media/accJSX.svg": "/static/media/accJSX.e407f0df56eeb15d3a932c90fbd11deb.svg",
-    "main.f5153646.css.map": "/static/css/main.f5153646.css.map",
-    "main.283e66da.js.map": "/static/js/main.283e66da.js.map"
+    "main.css": "/Crispies-React-Foodchain-site-DIGIT-2022/static/css/main.0c33623f.css",
+    "main.js": "/Crispies-React-Foodchain-site-DIGIT-2022/static/js/main.10b2cc91.js",
+    "static/media/LexendDeca-VariableFont_wght.ttf": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/LexendDeca-VariableFont_wght.85a26ab7491852266e9b.ttf",
+    "static/media/Carousel1.jpg": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/Carousel1.33376a239083818d5bce.jpg",
+    "static/media/Carousel2.jpg": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/Carousel2.a9f5e9166d69b4d372ce.jpg",
+    "static/media/nugget.png": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/nugget.84e7f699e847d35507a7.png",
+    "static/media/FredokaOne-Regular.ttf": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/FredokaOne-Regular.4aea26dd6637dfac0fac.ttf",
+    "static/media/pagination.less": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/pagination.452bab8aa1444b21387f.less",
+    "static/media/Snacks2.svg": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/Snacks2.8fe76fe1a578abe3d08341f61738277a.svg",
+    "static/media/Fries2.svg": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/Fries2.9575ecf1fe00086c26ade722d1acb2c2.svg",
+    "static/media/Burger2.svg": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/Burger2.6454f108d45955a12c0a155a960a583d.svg",
+    "index.html": "/Crispies-React-Foodchain-site-DIGIT-2022/index.html",
+    "static/media/Combos2.svg": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/Combos2.010c931e2c2a1db5ec5c907a3c7ab189.svg",
+    "static/media/cart.svg": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/cart.232bfecf512459d269560f7908e458d7.svg",
+    "static/media/Drinks2.svg": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/Drinks2.efbc1bcbdf0403584b358b4a1df31a08.svg",
+    "static/media/sauces2.svg": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/sauces2.b8e3e1807b267f8e29311a878aaf527e.svg",
+    "static/media/accJSX.svg": "/Crispies-React-Foodchain-site-DIGIT-2022/static/media/accJSX.e407f0df56eeb15d3a932c90fbd11deb.svg",
+    "main.0c33623f.css.map": "/Crispies-React-Foodchain-site-DIGIT-2022/static/css/main.0c33623f.css.map",
+    "main.10b2cc91.js.map": "/Crispies-React-Foodchain-site-DIGIT-2022/static/js/main.10b2cc91.js.map"
   },
   "entrypoints": [
-    "static/css/main.f5153646.css",
-    "static/js/main.283e66da.js"
+    "static/css/main.0c33623f.css",
+    "static/js/main.10b2cc91.js"
   ]
 }
