@@ -67,6 +67,7 @@ function App() {
               <SignUp authot={userState}></SignUp> :
               <Navigate to="/"></Navigate>}>
             </Route>
+            <Route exact path="/Crispies-React-Foodchain-site-DIGIT-2022/"element={<Navigate to="/"></Navigate>}></Route>{/*For gh-pages*/}
             <Route path="*" element={<NotFound></NotFound>}></Route>
           </Routes>
         </UserContext.Provider>
