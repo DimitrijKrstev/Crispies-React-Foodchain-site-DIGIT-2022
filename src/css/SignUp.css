@@ -23,7 +23,6 @@ textarea:focus, input:focus{
     animation: anim 8.5s ease-in-out infinite;
     transform:  translateY(-420%) rotate(0deg);
     margin-top: -500px;
-    opacity: 80%;
 
 }
 .n1{
