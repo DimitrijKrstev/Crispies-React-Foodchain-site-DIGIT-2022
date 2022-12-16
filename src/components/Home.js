@@ -2,14 +2,13 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import 'swiper/less/pagination';
-import { MenuCard } from './MenuCard';
 import { Link } from "react-router-dom";
 import "swiper/swiper-bundle.min.css";
 
 const HomeMenuCard = (props) => {
   return (
     <Link to="/Menu#Combos">
-      <div className='flex flex-col border-2 border-offblack m-1 items-stretch max-w-sm bg-beigeLight w-80 mt-4'>
+      <div className='flex flex-col border-2 border-offblack m-1 items-stretch max-w-sm bg-beige w-80 mt-4'>
         <img src={props.picture} className='flex border-b-2 border-offblack' alt="item picture"></img>
         <p className='text-center textSignin text-2xl mt-4'>{props.name}</p>
         <p className='text-center textSignin text-1xl mb-4'>Price: {props.price}</p>
@@ -26,7 +25,7 @@ export default function Home() {
     <>
     <h1 class=" border-b-2 border-offblack text-4xl text-center bg-beige titleLocations py-3">Your Taste buds' second home</h1>
     <div className="flex justify-center">
-      <div className="flex flex-col items-center bg-beige border-2 border-black mb-10 mt-8 min-w-[21rem]">
+      <div className="flex flex-col items-center bg-beigeLight border-2 border-black mb-10 mt-8 min-w-[21rem]">
         <Swiper
           spaceBetween={0}
           centeredSlides={true}

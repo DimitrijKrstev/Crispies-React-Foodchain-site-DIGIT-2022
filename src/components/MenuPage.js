@@ -6,7 +6,6 @@ import { db, rtdb } from '../index';
 import '../css/MenuPage.css'
 import MenuCard from './MenuCard';
 import Notification from './Notification';
-
 import burgerImg from '../images/Burger.svg'
 import combosImg from '../images/Combos.svg'
 import snacksImg from '../images/Snacks.svg'
@@ -67,8 +66,8 @@ const MenuPage = (props) => {
     if (props2.itemCards) filtered = props2.itemCards.filter((item) => item.type === props2.title);
     return (
       filtered.length > 0 && <div id={props2.id}>
-        <h1 className='text-center textSignin text-3xl my-8'>{props2.title}</h1>
-        <div className='flex justify-center flex-wrap mx-auto'>
+        <h1 className='text-center textSignin text-3xl my-8 font-bold'>{props2.title}</h1>
+        <div className='flex justify-center flex-wrap mx-auto last-of-type:mb-8'>
           {filtered.map((item) => (
             <MenuCard item={item} 
             authot={props.authot} 

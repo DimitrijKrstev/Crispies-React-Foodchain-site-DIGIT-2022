@@ -6,15 +6,6 @@ const MenuCard = (props) => {
     const decrement = () => {
         if (count > 1) updateCount(count - 1);
     }
-<<<<<<< HEAD
-    function fadeNotif() {
-        let notifDiv = document.getElementById("notif");
-        setTimeout(() => {(notifDiv.className = "hide")}, 1000);
-        notifDiv.className = "";
-        props.setNotifCount(count);
-    }
-=======
->>>>>>> 18a38937ff2eb75a418877f64b4bf020cb7630ad
     function logInClicked(e, changeClick){
         e.nativeEvent.stopImmediatePropagation();
         changeClick(true);
@@ -24,13 +15,8 @@ const MenuCard = (props) => {
         showNotif(`Added ${count} of ${props.item.name} to cart.`, props.setNotifObj);
     }
     return (
-<<<<<<< HEAD
-        <div className='flex flex-col border-2 border-offblack m-1 items-stretch max-w-sm bg-beige w-80 mt-4'>
-            <img src={props.item.picture} className='flex border-b-2 border-offblack' alt="item picture"></img>
-=======
         <div className='flex flex-col border-2 border-offblack m-1 bg-beige w-80 mt-4'>
             <img src={props.item.picture} className='flex border-b-2 border-offblack shrink-1' alt="item picture"></img>
->>>>>>> 18a38937ff2eb75a418877f64b4bf020cb7630ad
             <p className='text-center textSignin text-2xl mt-4'>{props.item.name}</p>
             <p className='text-center textSignin text-1xl mb-4'>Price: {props.item.price}</p>
             <div className={'flex flex-row self-stretch' + (!props.authot ? " disabled" : '')}>
