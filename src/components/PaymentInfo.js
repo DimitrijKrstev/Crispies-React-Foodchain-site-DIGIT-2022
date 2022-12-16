@@ -91,7 +91,7 @@ const PaymentInfo = ({ validPaymentInfo, setValidPaymentInfo }) => {
               }
               else setError(true);
             }}>Submit</button>:
-            <button className='w-full text-2xl border-y-2 border-offblack text-beige bg-offblack mt-4 editBtnHover textSignup bg-sea' onClick={() => {
+            <button className='w-full text-2xl border-y-2 border-offblack text-beige mt-4 editBtnHover textSignup bg-sea' onClick={() => {
               setEditable(true);
             }}>Edit</button>}
             {error &&

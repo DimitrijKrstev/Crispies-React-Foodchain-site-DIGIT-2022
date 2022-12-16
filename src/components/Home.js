@@ -49,7 +49,7 @@ export default function Home() {
           <SwiperSlide className="flex justify-center"><img src={carousel1}></img></SwiperSlide>
           <SwiperSlide className="flex justify-center"><img src={carousel2}></img></SwiperSlide>
         </Swiper></Link>
-        <h1 className="font-bold mt-2 text-3xl textSignin mt-8 mb-4">Specials</h1>
+        <h1 className="font-bold text-3xl textSignin mt-8 mb-4">Specials</h1>
         <div className="flex justify-center mb-5 flex-wrap max-w-[70vw]">
           <HomeMenuCard name="Crispy Chicken Combo" price="360" picture="https://media.discordapp.net/attachments/441534031016755200/1052968276382199891/Combo_Cheeseburger.jpg"></HomeMenuCard>
           <HomeMenuCard name="Crispy Wrap Combo" price="320" picture="https://media.discordapp.net/attachments/441534031016755200/1052968275744653372/Classic_Combo_Wrap.jpg"></HomeMenuCard>

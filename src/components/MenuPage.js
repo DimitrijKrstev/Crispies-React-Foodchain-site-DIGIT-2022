@@ -95,7 +95,7 @@ const MenuPage = (props) => {
           <Icon type={'Drinks'}></Icon><Icon type={'Sauces'}></Icon>
         </div>
 
-        <div className='mt-4 mb-4 mx-auto border-black flex flex-col w-full items-center flex-wrap max-w-[1150px] bg-beigeLight border-2 border-offblack'>
+        <div className='mt-4 mb-4 mx-auto flex flex-col w-full items-center flex-wrap max-w-[1150px] bg-beigeLight border-2 border-offblack'>
           <input className='text-center text-offblack bg-sea border-0 border-b-2 border-offblack w-full textSignin py-3 text-2xl mb-8 placeholder-beigeLight' type="text" placeholder='Search...' onChange={Searching}></input>
           {!ready &&
           <div className="mx-auto flex flex-col border-2 border-offblack max-w-[500px] mt-16 mb-10">
