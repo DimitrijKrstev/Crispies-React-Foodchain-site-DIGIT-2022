@@ -18,7 +18,7 @@ const FindUs = () => {
   }, [])
   
   return (
-    <div className='FindUs'>
+    <div className='FindUs minusNavbar'>
       <h1 className=" border-b-2 border-offblack text-4xl text-center bg-beige titleLocations py-3">Our locations</h1>
       <div className='flex justify-evenly flex-wrap'>
       {locations.map(l => 

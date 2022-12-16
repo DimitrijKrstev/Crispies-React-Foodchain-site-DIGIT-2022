@@ -5,16 +5,27 @@ import { ref, set, get, child, getDatabase } from "firebase/database";
 import { db, rtdb } from '../index';
 import '../css/MenuPage.css'
 import MenuCard from './MenuCard';
+import Notification from './Notification';
 
+import burgerImg from '../images/Burger.svg'
+import combosImg from '../images/Combos.svg'
+import snacksImg from '../images/Snacks.svg'
+import drinksImg from '../images/Drinks.svg'
+import friesImg from '../images/Fries.svg'
+import saucesImg from '../images/sauces.svg'
 const Icon = (props) => {
   let icon;
   switch (props.type) {
-    case 'Burgers': icon = 'https://cdn-icons-png.flaticon.com/512/1161/1161695.png'; break;
-    case 'Snacks': icon = 'https://cdn-icons-png.flaticon.com/512/5793/5793750.png'; break;
+    case 'Burgers': icon = burgerImg; break;
+    case 'Combos': icon = combosImg; break;
+    case 'Snacks': icon = snacksImg; break;
+    case 'Drinks': icon = drinksImg; break;
+    case 'Sauces': icon = saucesImg; break;
+    case 'Fries': icon = friesImg; break;
     default: icon = 'https://cdn-icons-png.flaticon.com/512/1161/1161695.png'
   }
   return (
-    <a href={"#" + props.type}className='border-2 border-black w-20 h-20 m-2' title={props.type}>
+    <a href={"#" + props.type}className='border-l-2 border-y-2 border-offblack pt-2 px-2 border-black max-w-[90px] w-[16vw]  mt-2 bg-sea mb-2 borderLast btnHover shrink-1' title={props.type}>
       <img src={icon}></img>
     </a>
   )
@@ -35,7 +46,7 @@ const MenuPage = (props) => {
   const [items, setItems] = useState();
   const [ready, setReady] = useState(false);
   const [fullItems, setFullItems] = useState();
-  const [notifCount, setNotifCount] = useState(0);
+  const [notifObj, setNotifObj] = useState({text:'', timestamp:0});
 
   useEffect(() => {
     const q = query(collection(db, 'menuItems')/*,orderBy('timeCreated')*/);
@@ -57,9 +68,14 @@ const MenuPage = (props) => {
     return (
       filtered.length > 0 && <div id={props2.id}>
         <h1 className='text-center textSignin text-3xl my-8'>{props2.title}</h1>
-        <div className='flex justify-center flex-wrap'>
-          {filtered.map((item) => (<MenuCard item={item} authot={props.authot} addCart={addCart} changeClick={props.changeClick}
-            setNotifCount={setNotifCount}></MenuCard>))}
+        <div className='flex justify-center flex-wrap mx-auto'>
+          {filtered.map((item) => (
+            <MenuCard item={item} 
+            authot={props.authot} 
+            addCart={addCart} 
+            changeClick={props.changeClick}
+            setNotifObj={setNotifObj}>
+            </MenuCard>))}
         </div>
       </div>
     )
@@ -71,25 +87,27 @@ const MenuPage = (props) => {
 
   return (
     <div>
-
+      <Notification input={notifObj}></Notification>
       <h1 className=" border-b-2 border-offblack text-4xl text-center bg-beige titleLocations py-3">Menu</h1>
-      <div className='fixed right-0 top-5 z-10'>
-        <div id="notif" className='hide'>
-          <p className="bg-terra text-offblack p-3">Successfully added {notifCount} items to the cart.</p>
-        </div>
-      </div>
 
       <div className='flex flex-col items-center'>
-        <div className='mt-2 flex justify-center flex-wrap'>
+        <div className='mt-4 flex justify-center'>
           <Icon type={'Combos'}></Icon><Icon type={'Burgers'}></Icon><Icon type={'Snacks'}></Icon><Icon type={'Fries'}></Icon>
           <Icon type={'Drinks'}></Icon><Icon type={'Sauces'}></Icon>
         </div>
-        <input className='w-[65%] text-center border-2 border-offblack' type="text" placeholder='Search...' onChange={Searching}></input>
-        <div className='mt-5 mb-5  border-black flex flex-col w-full items-center flex-wrap w-9/12'>
+
+        <div className='mt-5 mb-5 mx-auto border-black flex flex-col w-full items-center flex-wrap max-w-[1150px] bg-beigeLight border-2 border-offblack'>
+          <input className='text-center text-offblack bg-sea border-0 border-b-2 border-offblack w-full textSignin py-3 text-2xl placeholder-offgray' type="text" placeholder='Search...' onChange={Searching}></input>
           {!ready &&
-            <div className='w-full h-[40rem] flex items-center justify-center bg-beige text-offblack text-4xl textSignin'>
-              Loading..
-            </div>}
+          <div className="mx-auto flex flex-col border-2 border-offblack max-w-[500px] mt-16 mb-10">
+            <div className="flex justify-between bg-beige">
+              <h1 className="textSignin text-offblack text-3xl ml-3">Loading</h1>
+              <button className="textSignin bg-terra text-offblack p-2 px-4 border-l-2 border-offblack">...</button>
+            </div>
+            <div className="flex flex-col bg-beigeLight border-t-2 border-offblack text-center border-b-8 py-16">
+              <h1 className="textSignin text-6xl px-4">Wrapping up...</h1>
+            </div>
+          </div>}
           <Section title={"Combos"} itemCards={items} id="Combos"></Section>
           <Section title={"Burgers"} itemCards={items} id="Burgers"></Section>
           <Section title={"Snacks"} itemCards={items} id="Snacks"></Section>
