@@ -44,10 +44,9 @@ const PaymentInfo = ({ validPaymentInfo, setValidPaymentInfo }) => {
   const [editable, setEditable] = useState(false);
 
   return (
-    <div className="PaymentInfo">
-      <h1 className=" border-b-2 border-offblack text-4xl text-center bg-beige titleLocations py-3">Ready to Order?</h1>
+    <div className="PaymentInfo mx-0 sm:mx-5 shrink max-w-full">
       {userState &&
-        <div className='purchaseInformation flex flex-col max-w-fit mx-auto border-x-2 border-offblack bg-beige mt-8 textSignin'>
+        <div className='purchaseInformation shrink flex flex-col max-w-full mx-auto border-x-2 border-offblack bg-beige mt-8 textSignin'>
           <p className="p-2 textSignup text-center mb-2 bg-offblack w-full text-beige">Please confirm/complete your details below:</p>
           <EditableContext.Provider value={editable}>
             <div className="mx-4 sm:mx-10">
