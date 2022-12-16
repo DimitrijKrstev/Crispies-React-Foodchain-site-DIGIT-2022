@@ -6,10 +6,10 @@ const Order = ({setCartItemsNum}) => {
   const [validPaymentInfo, setValidPaymentInfo] = useState(false);
 
   return (
-    <>
+    <div className='paymentContainer'>
     <PaymentInfo validPaymentInfo = {validPaymentInfo} setValidPaymentInfo = {setValidPaymentInfo}/>
     <Cart setCartItemsNum={setCartItemsNum} validPaymentInfo = {validPaymentInfo}/>
-    </>
+    </div>
   )
 }
 

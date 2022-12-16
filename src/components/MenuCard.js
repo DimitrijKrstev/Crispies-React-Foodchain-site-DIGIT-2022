@@ -7,7 +7,7 @@ const MenuCard = (props) => {
     }
     function fadeNotif() {
         let notifDiv = document.getElementById("notif");
-        setTimeout(() => (notifDiv.className = "hide"), 1000);
+        setTimeout(() => {(notifDiv.className = "hide")}, 1000);
         notifDiv.className = "";
         props.setNotifCount(count);
     }
@@ -20,7 +20,7 @@ const MenuCard = (props) => {
         fadeNotif();
     }
     return (
-        <div className='flex flex-col border-2 border-offblack m-1 items-stretch grid max-w-sm bg-beige w-80 mt-4'>
+        <div className='flex flex-col border-2 border-offblack m-1 items-stretch max-w-sm bg-beige w-80 mt-4'>
             <img src={props.item.picture} className='flex border-b-2 border-offblack' alt="item picture"></img>
             <p className='text-center textSignin text-2xl mt-4'>{props.item.name}</p>
             <p className='text-center textSignin text-1xl mb-4'>Price: {props.item.price}</p>
