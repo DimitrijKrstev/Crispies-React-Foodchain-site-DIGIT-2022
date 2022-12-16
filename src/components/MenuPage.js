@@ -6,12 +6,12 @@ import { db, rtdb } from '../index';
 import '../css/MenuPage.css'
 import MenuCard from './MenuCard';
 import Notification from './Notification';
-import burgerImg from '../images/Burger.svg'
-import combosImg from '../images/Combos.svg'
-import snacksImg from '../images/Snacks.svg'
-import drinksImg from '../images/Drinks.svg'
-import friesImg from '../images/Fries.svg'
-import saucesImg from '../images/sauces.svg'
+import burgerImg from '../images/Burger2.svg'
+import combosImg from '../images/Combos2.svg'
+import snacksImg from '../images/Snacks2.svg'
+import drinksImg from '../images/Drinks2.svg'
+import friesImg from '../images/Fries2.svg'
+import saucesImg from '../images/sauces2.svg'
 const Icon = (props) => {
   let icon;
   switch (props.type) {
@@ -24,7 +24,7 @@ const Icon = (props) => {
     default: icon = 'https://cdn-icons-png.flaticon.com/512/1161/1161695.png'
   }
   return (
-    <a href={"#" + props.type}className='border-l-2 border-y-2 border-offblack pt-2 px-2 border-black max-w-[90px] w-[16vw]  mt-2 bg-sea mb-2 borderLast btnHover shrink-1' title={props.type}>
+    <a href={"#" + props.type}className='border-l-2 border-y-2 border-offblack pt-2 px-2 border-black max-w-[90px] w-[16vw]  mt-2 bg-sea mb-2 categoryIcons btnHover shrink-1' title={props.type}>
       <img src={icon}></img>
     </a>
   )
@@ -96,7 +96,7 @@ const MenuPage = (props) => {
         </div>
 
         <div className='mt-4 mb-4 mx-auto border-black flex flex-col w-full items-center flex-wrap max-w-[1150px] bg-beigeLight border-2 border-offblack'>
-          <input className='text-center text-offblack bg-sea border-0 border-b-2 border-offblack w-full textSignin py-3 text-2xl mb-8 placeholder-offgray' type="text" placeholder='Search...' onChange={Searching}></input>
+          <input className='text-center text-offblack bg-sea border-0 border-b-2 border-offblack w-full textSignin py-3 text-2xl mb-8 placeholder-beigeLight' type="text" placeholder='Search...' onChange={Searching}></input>
           {!ready &&
           <div className="mx-auto flex flex-col border-2 border-offblack max-w-[500px] mt-16 mb-10">
             <div className="flex justify-between bg-beige">

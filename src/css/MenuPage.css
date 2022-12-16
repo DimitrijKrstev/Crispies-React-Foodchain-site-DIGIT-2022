@@ -32,6 +32,13 @@
     background-color: rgb(54, 54, 54);
 }
 
-.borderLast:last-of-type {
+.categoryIcons:last-of-type {
     border-right: solid #171717 2px;
+    padding: 6px;
+    padding-bottom: 0px;
+}
+
+.categoryIcons:first-of-type {
+    padding-bottom: 2px;
+    padding-top: 4px;
 }
