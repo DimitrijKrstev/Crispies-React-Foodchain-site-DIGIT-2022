@@ -4,6 +4,8 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 import 'swiper/less/pagination';
 import { Link } from "react-router-dom";
 import "swiper/swiper-bundle.min.css";
+import carousel1 from '../images/Carousel1.jpg'
+import carousel2 from '../images/Carousel2.jpg'
 
 const HomeMenuCard = (props) => {
   return (
@@ -26,7 +28,7 @@ export default function Home() {
     <h1 class=" border-b-2 border-offblack text-4xl text-center bg-beige titleLocations py-3">Your Taste buds' second home</h1>
     <div className="flex justify-center">
       <div className="flex flex-col items-center bg-beigeLight border-2 border-black mb-10 mt-8 min-w-[21rem]">
-        <Swiper
+        <Link to="Menu"><Swiper
           spaceBetween={0}
           centeredSlides={true}
           autoplay={{
@@ -37,17 +39,17 @@ export default function Home() {
             clickable: true,
             renderBullet: function () {
               return (
-                '<span class="border-2 border-black bg-red-400 min-w-[5px] min-h-[5px] invisible">asd</span>'
+                '<button class="border-2 border-black bg-red-400 min-w-[5px] min-h-[5px] invisible">BOB</button>'
               )
             }
           }}
           modules={[Autoplay, Pagination]}
-          className="mySwiper mt-8 max-w-[68vw] max-h-[58vh] border-2 border-black min-w-[20rem] mx-8"
+          className="mySwiper mt-8 max-w-[68vw] max-h-[58vh] border-2 border-black min-w-[20rem] mx-8 w-[970px] object-cover"
         >
-          <SwiperSlide className="flex justify-center"><img src={"https://media.discordapp.net/attachments/413015034159955973/1052977323621761064/IMG_2153.png"}></img></SwiperSlide>
-          <SwiperSlide className="flex justify-center"><img src={"https://media.discordapp.net/attachments/777646602735058975/1052898627909062706/RDT_20221215_114250659565760978107184.jpg"}></img></SwiperSlide>
-        </Swiper>
-        <h1 className="font-bold mt-2 text-3xl">Specials</h1>
+          <SwiperSlide className="flex justify-center"><img src={carousel1}></img></SwiperSlide>
+          <SwiperSlide className="flex justify-center"><img src={carousel2}></img></SwiperSlide>
+        </Swiper></Link>
+        <h1 className="font-bold mt-2 text-3xl textSignin mt-8 mb-4">Specials</h1>
         <div className="flex justify-center mb-5 flex-wrap max-w-[70vw]">
           <HomeMenuCard name="Crispy Chicken Combo" price="360" picture="https://media.discordapp.net/attachments/441534031016755200/1052968276382199891/Combo_Cheeseburger.jpg"></HomeMenuCard>
           <HomeMenuCard name="Crispy Wrap Combo" price="320" picture="https://media.discordapp.net/attachments/441534031016755200/1052968275744653372/Classic_Combo_Wrap.jpg"></HomeMenuCard>

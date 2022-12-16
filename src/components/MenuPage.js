@@ -66,7 +66,7 @@ const MenuPage = (props) => {
     if (props2.itemCards) filtered = props2.itemCards.filter((item) => item.type === props2.title);
     return (
       filtered.length > 0 && <div id={props2.id}>
-        <h1 className='text-center textSignin text-3xl my-8 font-bold'>{props2.title}</h1>
+        <h1 className='text-center textSignin text-3xl mb-8 font-bold'>{props2.title}</h1>
         <div className='flex justify-center flex-wrap mx-auto last-of-type:mb-8'>
           {filtered.map((item) => (
             <MenuCard item={item} 
@@ -95,8 +95,8 @@ const MenuPage = (props) => {
           <Icon type={'Drinks'}></Icon><Icon type={'Sauces'}></Icon>
         </div>
 
-        <div className='mt-5 mb-5 mx-auto border-black flex flex-col w-full items-center flex-wrap max-w-[1150px] bg-beigeLight border-2 border-offblack'>
-          <input className='text-center text-offblack bg-sea border-0 border-b-2 border-offblack w-full textSignin py-3 text-2xl placeholder-offgray' type="text" placeholder='Search...' onChange={Searching}></input>
+        <div className='mt-4 mb-4 mx-auto border-black flex flex-col w-full items-center flex-wrap max-w-[1150px] bg-beigeLight border-2 border-offblack'>
+          <input className='text-center text-offblack bg-sea border-0 border-b-2 border-offblack w-full textSignin py-3 text-2xl mb-8 placeholder-offgray' type="text" placeholder='Search...' onChange={Searching}></input>
           {!ready &&
           <div className="mx-auto flex flex-col border-2 border-offblack max-w-[500px] mt-16 mb-10">
             <div className="flex justify-between bg-beige">
