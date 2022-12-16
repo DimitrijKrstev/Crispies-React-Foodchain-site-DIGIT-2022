@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Crispies - DIGIT 2022
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Замисла
+**Технологии:**
+- React
+- React Router
+- Firebase
+- TailwindCss
+- Extra npm packages: swiper, react-indiana-drag-scroll
 
-## Available Scripts
+**Структура**
+Имавме цел да направиме веб страна за измислен ланец на ресторани за брза храна кои би и ги задоволил сите можни кориснички сценарија. Страната е составена од следните потстрани кои се меѓусебно поврзани со користење на React router-от:
 
-In the project directory, you can run:
+- Home
+- Menu
+- Find us
+- Cart
+- Sign up Page
 
-### `npm start`
+**Стил**
+Веб сајтот решивме да го дизајнираме во ретро нео-бруталистички стил. Овој стил е основан на остри агли со поширока црна граница. Дизајнот е апстрактен и е во контраст од денешниот застапен модерен веб-дизајн со цел да се направи уникатна и впечатлива веб-страна за корисникот. Внимававме палетата да е основана на кохезивни пастелни бои, чијшто број е мал во интерес корисникот да не е обземен од разни бои. Зелената боја е генерално применета за компоненти кои се интерактивни нудејќи визуелен знак на корисникот. Најзастапен тон на бои се варијанти на беж бојата која се користи за позанемарливи секции од страната, главно како боја за статични елементи која е ненападна на човековото око.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Искористени можности што ги нуди React
+**Routing**
+Во App.js ни е дефиниран главниот BrowserRouter кој ја отсликува структурата на страницата. Внатре во него се вгнездени потребните Routes кои ја содржат точната зададена патека за таа конкретна страна. Како елемент се задава JSX компонентата која е самата страна. Дополнително, се користи условно рутирање, поради зависноста на одредени страници за пристапноста според корисничка автентикација. Тоа се прави со помош на useState hook и Navigate компонента од React Routerот кои се вметнати во JSX елемент. На врвот на страницата има навигациско мени кое дозволува, со помош на Link компоненти, корисникот да навигира низ структурата на вебсајтот.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Props**
+Props се искористени во широк обем низ кодот. Пример за тоа е *PaymentInfoItem*, кој како props прима голем број на променливи поврзани со инпутот, како и *MenuCard*, кој прима објект преземен од датабазата и ги прикажува неговите детали. 
 
-### `npm test`
+**JSX**
+JSX се користи во голема мера за креирање на реупотребливи компоненти. Интегрирањето на HTML структура во JavaScript исто така дозволува елегантно условно вклучување на елементи, како и мапирање на низи во елементи.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Hooks**
+Главната карактеристика на новите верзии на React, која овозможува едноставно и елегантно креирање на функционални компоненти, се Hooks. Во нашиот проект најшироко употребуван hook е useState. Особено значајна е контролата која Hooks ни ја даваат врз ререндерирањето на страната. Од овој аспект useEffect го користевме бидејќи ни дава најголема контрола врз извршувањето на блок од код. На пример, во *App.js* е искористен со празна низа од dependencies, за да се осигура едно повикување на onAuthStateChanged ф-јата. Во useContext значително го упрости нашиот код, со тоа што одредени широко користени пресметки се доделени на највисоките нивоа на кодот, како на пример currentUser објектот од Firebase. useRef е искористен за да избегнеме директно манипулирање со вистинскиот DOM, со тоа оптимизирајќи го кодот. Пример за ова гледаме во *Navbar.js* каде се користи за да знаеме кога корисникот ќе откликне од SignIn контејнерот за да се исклучи промптот.
 
-### `npm run build`
+## Искористени можности што ги нуди Firebase
+Страната е кориснички ориентирана и нуди зачувување на состојбата низ каков било пристап. За таа цел решивме да ги искористиме услугите на Firebase, Firebase ни нуди корисничка автентикација и зачувување на податоците во облакот (Firestore и Realtime Database)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Изработка на:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Димитриј Крстев**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Лука Крстиќ**
 
-### `npm run eject`
+- **Александар Филиповски**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
