@@ -47,11 +47,6 @@
 
 #map {
     overflow: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-#map::-webkit-scrollbar {
-    display: none;
 }
 @media (max-width: 867px) {
     #map {
