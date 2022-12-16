@@ -9,9 +9,6 @@
     margin: auto;
     overflow: hidden;
 }
-#map img {
-    margin-top: -16vw;
-}
 .verticalMap {
     display: none;
 }
@@ -45,6 +42,25 @@
     }
     .FindUsCard {
         border-bottom: 2px solid #171717;
+    }
+}
+
+#map {
+    overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+#map::-webkit-scrollbar {
+    display: none;
+}
+@media (max-width: 867px) {
+    #map {
+        max-height: calc(100vh - 148px - 66px - 144px - 1px);
+    }
+}
+@media (min-width: 868px) {
+    #map {
+        max-height: calc(100vh - 124px - 66px - 144px - 1px);
     }
 }
 .titleLocations {
