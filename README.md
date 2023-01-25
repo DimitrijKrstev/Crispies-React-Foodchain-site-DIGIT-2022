@@ -1,5 +1,7 @@
 # Crispies - DIGIT 2022
 
+gh pages link: https://dimitrijkrstev.github.io/Crispies-React-Foodchain-site-DIGIT-2022
+
 ## Замисла
 **Технологии:**
 - React
